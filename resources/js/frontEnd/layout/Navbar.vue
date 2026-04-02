@@ -39,16 +39,16 @@
                 <input type="search" placeholder="এখানে লিখুন.."
                     class="border border-[#bec9d2] focus:outline-1 focus:outline-[#1879d0]  py-2 px-2">
                 <button
-                    class="bg-[#1879d0] text-white hover:bg-[#0a4466] transition duration-500 cursor-pointer py-2 px-4">খুজুন</button>
+                    class="bg-[#1879d0] text-white hover:bg-[#0a4466] text-base transition duration-500 cursor-pointer py-2 px-4">খুজুন</button>
             </div>
         </div>
-        <div class="mb-4">
+        <div class="mb-4 text-base">
             <ul class="flex items-center bg-[#b30e0e]">
                 <li class="text-white bg-[#018cc1] border-r border-[#971818] py-2 px-4">প্রচ্ছদ</li>
                 <li class="text-white hover:bg-[#971818] border-r border-[#971818] py-2 px-4">জাতীয়</li>
                 <li class="group text-white hover:bg-[#971818] border-r border-[#971818] relative py-2 px-4">
                     সারাদেশে <i class="fa-solid fa-angle-down"></i>
-                    <ul class="absolute invisible group-hover:visible w-40 left-0 top-10 bg-[#b30e0e] shadow-lg">
+                    <ul class="absolute invisible group-hover:visible w-40 z-10 left-0 top-10 bg-[#b30e0e] shadow-lg">
                         <li
                             class=" text-white hover:bg-[#DCDCDC] hover:text-black border-b border-r border-[#971818] py-2 px-4">
                             ঢাকা বিভাগ</li>
