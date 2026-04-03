@@ -6,6 +6,8 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700;900&display=swap" rel="stylesheet">
+
         
 
         <!-- Styles / Scripts -->

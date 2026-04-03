@@ -22,27 +22,27 @@
             <div class="w-[850px]"><img src="../../../../public/uploads/bannar/bannar.gif"></div>
         </div>
         <div class="flex justify-between items-center mb-4">
-            <div class="flex">
+            <div class="flex text-lg">
                 <button class="bg-[#0a4466] text-white py-2 pr-12 pl-1">শিরোনাম :</button>
-                <div class="w-[1100px] flex items-center bg-[#f1f7fb] px-2">
+                <div class="w-[1050px] flex items-center bg-[#f1f7fb] px-2">
                     <marquee>
-                        <i class=" fa fa-square text-[#991515] px-1"></i><a href="#" class="cursor-pointer">প্রথম প্রহরে
+                        <i class=" fa fa-square text-[#991515]"></i><a href="#" class="cursor-pointer px-1">প্রথম প্রহরে
                             নয়, সিলেটে বিজয় দিবসের
                             অনুষ্ঠান ভোরে</a>
-                        <i class="fa fa-square text-[#991515] px-1"></i><a href="#" class="cursor-pointer">রাজশাহীতে
+                        <i class="fa fa-square text-[#991515]"></i><a href="#" class="cursor-pointer px-1">রাজশাহীতে
                             ১৫টি স্বর্ণের বারসহ যুবক
                             গ্রেফতার</a>
                     </marquee>
                 </div>
             </div>
-            <div class="flex justify-end-safe">
+            <div class="flex justify-end-safe text-lg">
                 <input type="search" placeholder="এখানে লিখুন.."
                     class="border border-[#bec9d2] focus:outline-1 focus:outline-[#1879d0]  py-2 px-2">
                 <button
-                    class="bg-[#1879d0] text-white hover:bg-[#0a4466] text-base transition duration-500 cursor-pointer py-2 px-4">খুজুন</button>
+                    class="bg-[#1879d0] text-white hover:bg-[#0a4466] transition duration-500 cursor-pointer py-2 px-4">খুজুন</button>
             </div>
         </div>
-        <div class="mb-4 text-base">
+        <div class="mb-4 text-lg">
             <ul class="flex items-center bg-[#b30e0e]">
                 <li class="text-white bg-[#018cc1] border-r border-[#971818] py-2 px-4">প্রচ্ছদ</li>
                 <li class="text-white hover:bg-[#971818] border-r border-[#971818] py-2 px-4">জাতীয়</li>
