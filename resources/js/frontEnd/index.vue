@@ -108,7 +108,7 @@
                     <p class="text-base md:text-lg text-[#333] line-clamp-3">‘সরকার দেশের যে উন্নয়ন করছে, আমি প্রতিবছর
                         আয়কর দিয়ে দেশের সেই
                         উন্নয়নের একজন
-                        <button class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</button>
+                        <a href="#" class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a>
                     </p>
                 </div>
             </div>
@@ -126,7 +126,7 @@
             <!-- জাতীয় -->
             <div class="flex w-full justify-center items-center border-b-2 border-[#f00f00] text-xl">
                 <div
-                    class="flex justify-center items-center whitespace-nowrap cursor-pointer bg-[#f00f00] text-white py-2 px-1">
+                    class="flex justify-center items-center whitespace-nowrap cursor-pointer bg-[#f00f00] text-white p-2">
                     <a>
                         <i class="fa-solid fa-bars"></i> জাতীয়
                     </a>
@@ -151,9 +151,8 @@
             </div>
 
             <!-- আন্তর্জাতিক -->
-            <div class="flex w-full justify-center items-center border-b-2 border-[#f00f00] text-xl">
-                <div
-                    class="flex justify-center items-center whitespace-nowrap cursor-pointer bg-[#f00f00] text-white py-2 px-1">
+            <div class="flex w-full items-center border-b-2 border-[#f00f00] text-xl">
+                <div class="whitespace-nowrap cursor-pointer bg-[#f00f00] text-white p-2">
                     <a href="#">
                         <i class="fa-solid fa-bars"></i> আন্তর্জাতিক
                     </a>
@@ -182,12 +181,43 @@
             </div>
         </div>
         <div class="hidden lg:block flex-1">
-            <div>
+            <div class="mb-7">
                 <div class="flex items-center bg-[#f7f7f7] text-[#333] text-lg border-l-5 border-[#f00f00] p-2 mb-2">
                     <h4>ফেসবুকে আমরা...</h4>
                 </div>
-                <div class="flex items-center bg-[#f7f7f7] text-[#333] text-lg border-l-5 border-[#f00f00] p-2">
+                <div class="flex items-center bg-[#f7f7f7] text-[#333] text-lg border-l-5 border-[#f00f00] p-2 mb-2">
                     <h4>পুরাতন খবর</h4>
+                </div>
+                <div class="flex text-lg">
+                    <input type="date" placeholder="এখানে লিখুন.."
+                        class="flex-1 border border-[#bec9d2] focus:outline-none focus:ring-1 focus:ring-[#1879d0] py-2 px-2">
+                    <button
+                        class="bg-[#1879d0] text-white hover:bg-[#0a4466] transition py-2 px-6 cursor-pointer">খুজুন</button>
+                </div>
+            </div>
+
+
+            <!--স্বাস্থ্য ক্যাটাগরি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>স্বাস্থ্য
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <div class="w-full group overflow-hidden shadow-lg/5">
+                <div class="w-full h-full overflow-hidden">
+                    <img src="../../../public/uploads/post/dental-college-20171019191958-600x337.jpg"
+                        class="transition-transform duration-600 group-hover:scale-120">
+                </div>
+                <div class="w-full p-2">
+                    <a href="#"
+                        class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] py-2 block">ডেন্টালে
+                        ভর্তি : ৪৮ ঘণ্টায় ১১ সহস্রাধিক আবেদন</a>
+                    <p class="text-base md:text-lg text-[#333] line-clamp-3">চলতি বছর সরকারি-বেসরকারি ডেন্টাল কলেজে গত
+                        ৪৮ ঘণ্টার কম সময়ে ১১ হাজারেরও বেশি ভর্তিচ্ছুর আবেদন<a href="#"
+                            class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                 </div>
             </div>
 
