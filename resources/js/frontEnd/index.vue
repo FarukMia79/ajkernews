@@ -95,12 +95,15 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 shadow-lg">
-                <div>
-                    <img src="../../../public/uploads/post/b5ad7e74e5c010d7f52850a38f7a3ad3-5a10328b77874.jpg">
+            <div class="group w-full md:w-1/2 shadow-lg overflow-hidden">
+                <div class="overflow-hidden">
+                    <img class="w-full h-full transition-transform duration-600 group-hover:scale-120"
+                        src="../../../public/uploads/post/b5ad7e74e5c010d7f52850a38f7a3ad3-5a10328b77874.jpg">
                 </div>
                 <div class="py-4 px-2">
-                    <h2 class="text-xl md:text-2xl font-medium hover:text-[#337ab7] pb-2">কর দিয়ে দেশের উন্নয়নের একজন
+                    <h2
+                        class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] pb-2">
+                        কর দিয়ে দেশের উন্নয়নের একজন
                         অংশীদার আমি</h2>
                     <p class="text-base md:text-lg text-[#333] line-clamp-3">‘সরকার দেশের যে উন্নয়ন করছে, আমি প্রতিবছর
                         আয়কর দিয়ে দেশের সেই
@@ -119,8 +122,11 @@
 
     <div class="flex w-full gap-7">
         <div class="w-full lg:w-2/3">
+
+            <!-- জাতীয় -->
             <div class="flex w-full justify-center items-center border-b-2 border-[#f00f00] text-xl">
-                <div class="flex justify-center items-center w-[100px] bg-[#f00f00] text-white py-2 px-1">
+                <div
+                    class="flex justify-center items-center whitespace-nowrap cursor-pointer bg-[#f00f00] text-white py-2 px-1">
                     <a>
                         <i class="fa-solid fa-bars"></i> জাতীয়
                     </a>
@@ -128,6 +134,51 @@
                 <div class="flex-1 bg-[#d6effe] text-[#d6effe] py-2">
                     .
                 </div>
+            </div>
+            <div class="w-full mb-7">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-7 w-full">
+                    <div v-for="i in 8" :key="i" class="flex border-b-1 border-[#bec9d2] py-2">
+                        <img class="w-[170px] md:w-[130px] h-auto cursor-pointer"
+                            src="../../../public/uploads/post/parlament-sm-20171120165706.jpg">
+                        <a href="#"
+                            class="text-base md:text-lg cursor-pointer pl-2 hover:text-red-600 transition-colors duration-600">সরকারি
+                            অফিসে ৩ লাখ ৬০ হাজার পদ শূন্য</a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mb-7">
+                <img class="w-full h-auto" src="../../../public/uploads/biggapon/biggapon-1.gif">
+            </div>
+
+            <!-- আন্তর্জাতিক -->
+            <div class="flex w-full justify-center items-center border-b-2 border-[#f00f00] text-xl">
+                <div
+                    class="flex justify-center items-center whitespace-nowrap cursor-pointer bg-[#f00f00] text-white py-2 px-1">
+                    <a href="#">
+                        <i class="fa-solid fa-bars"></i> আন্তর্জাতিক
+                    </a>
+                </div>
+                <div class="flex-1 bg-[#d6effe] text-[#d6effe] py-2">
+                    .
+                </div>
+            </div>
+            <div class="w-full mb-7">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-7 gap-y-2 w-full">
+                    <div v-for="i in 6" :key="i" class="group overflow-hidden shadow-lg/5 py-2">
+                        <div class="w-full h-auto overflow-hidden">
+                            <img class="w-full h-full cursor-pointer object-cover transition-transform duration-600 group-hover:scale-120"
+                                src="../../../public/uploads/post/uk-car-20171119145426-600x337.jpg">
+                        </div>
+                        <div class="p-2">
+                            <a href="#"
+                                class="text-base md:text-lg cursor-pointer hover:text-red-600 transition-colors duration-600">২০২৭
+                                সালের মধ্যে চালকবিহীন গাড়ি আনছে নেপাল</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full mb-7">
+                <img class="w-full h-auto" src="../../../public/uploads/biggapon/biggapon-1.gif">
             </div>
         </div>
         <div class="hidden lg:block flex-1">
