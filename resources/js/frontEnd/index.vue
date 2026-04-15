@@ -156,6 +156,8 @@
         </div>
     </div>
 
+
+    <!--বিজ্ঞাপন-->
     <div class="w-full flex flex-col md:flex-row justify-between gap-7 mb-7">
         <img class="flex-1 h-20 overflow-hidden" src="../../../public/uploads/biggapon/biggapon-1.gif">
         <img class="flex-1 h-20 overflow-hidden" src="../../../public/uploads/biggapon/biggapon-1.gif">
@@ -190,6 +192,8 @@
                     </div>
                 </div>
             </div>
+
+            <!--বিজ্ঞাপন-->
             <div class="w-full mb-7">
                 <img class="w-full h-auto" src="../../../public/uploads/biggapon/biggapon-1.gif">
             </div>
@@ -240,7 +244,7 @@
                     <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
                         <div class="w-full h-full overflow-hidden">
                             <img src="../../../public/uploads/post/bnp-20171120133207.jpg"
-                                class="transition-transform duration-600 group-hover:scale-120">
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
                         </div>
                         <div class="w-full p-2">
                             <a href="#"
@@ -289,7 +293,51 @@
                         </div>
                         <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
                     </div>
+                    <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="../../../public/uploads/post/faika-20171118215621-600x337.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="w-full p-2">
+                            <a href="#"
+                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">উত্তরায়
+                                ফায়কা বুটিকসের যাত্রা শুরু</a>
+                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">দেশীয় পোশাকের সমাহারে রাজধানী
+                                উত্তরার ৪ নম্বর সেক্টরে যাত্রা শুরু করলো ফায়কা ওম্যানস ক্লথিং বুটিকস।<a href="#"
+                                    class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                        </div>
+
+                        <div>
+                            <div v-for="i in 4" :key="i"
+                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+
+                                <img src="../../../public/uploads/post/hsbc-20171118034650.jpg"
+                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+
+                                <div class="flex-1 overflow-hidden">
+
+                                    <a href="#"
+                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        পাঁচ প্রতিষ্ঠানকে রফতানির স্বীকৃতি দিল এইচএসবিসি
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                                <span class="text-base cursor-pointer">আরো খবর..</span>
+                                <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <!--বিজ্ঞাপন-->
+            <div class="w-full mb-7">
+                <img class="w-full h-auto" src="../../../public/uploads/biggapon/biggapon-1.gif">
             </div>
         </div>
 
