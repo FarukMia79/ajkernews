@@ -45,53 +45,94 @@
                 <div class="h-[365px] overflow-y-auto text-lg border-x-1 border-b-1 border-[#bec9d2] p-2">
                     <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
-                        <a href="#" class="text-base md:text-lg hover:text-[#f00]">প্রথম প্রহরে নয়, সিলেটে বিজয় দিবসের
-                            অনুষ্ঠান
-                            ভোরে</a>
+                        <div class="flex-1 overflow-hidden">
+                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">প্রথম প্রহরে
+                                নয়, সিলেটে বিজয়
+                                দিবসের
+                                অনুষ্ঠান
+                                ভোরে</a>
+                        </div>
+
                     </div>
                     <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
-                        <a href="#" class="text-base md:text-lg hover:text-[#f00]">সিলেটে সড়ক দুর্ঘটনায় যুবক নিহত</a>
+                        <div class="flex-1 overflow-hidden">
+                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">সিলেটে সড়ক
+                                দুর্ঘটনায় যুবক নিহত</a>
+                        </div>
+
                     </div>
                     <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
-                        <a href="#" class="text-base md:text-lg hover:text-[#f00]">রাজশাহীতে ১৫টি স্বর্ণের বারসহ যুবক
-                            গ্রেফতার</a>
+                        <div class="flex-1 overflow-hidden">
+                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">রাজশাহীতে
+                                ১৫টি স্বর্ণের বারসহ যুবক
+                                গ্রেফতার</a>
+                        </div>
+
                     </div>
                     <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
-                        <a href="#" class="text-base md:text-lg hover:text-[#f00]">রাজশাহীতে ট্রাকবোঝায় ওএমএসের চাল
-                            উদ্ধার</a>
+                        <div class="flex-1 overflow-hidden">
+                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">রাজশাহীতে
+                                ট্রাকবোঝায় ওএমএসের চাল
+                                উদ্ধার</a>
+                        </div>
+
                     </div>
                     <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
-                        <a href="#" class="text-base md:text-lg hover:text-[#f00]">রংপুরে পুলিশের সঙ্গে ‘বন্দুকযুদ্ধে’
-                            চরমপন্থী
-                            নিহত</a>
+                        <div class="flex-1 overflow-hidden">
+                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">রংপুরে
+                                পুলিশের সঙ্গে ‘বন্দুকযুদ্ধে’
+                                চরমপন্থী
+                                নিহত</a>
+                        </div>
+
                     </div>
                     <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
-                        <a href="#" class="text-base md:text-lg hover:text-[#f00]">রংপুরে পার্টিকেল বোর্ড কারখানায়
-                            আগুন</a>
+                        <div class="flex-1 overflow-hidden">
+                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">রংপুরে
+                                পার্টিকেল বোর্ড কারখানায়
+                                আগুন</a>
+                        </div>
+
                     </div>
                     <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
-                        <a href="#" class="text-base md:text-lg hover:text-[#f00]">ময়মনসিংহে প্রতিদিন ১৫টি বিবাহ
-                            বিচ্ছেদ</a>
+                        <div class="flex-1 overflow-hidden">
+                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">ময়মনসিংহে
+                                প্রতিদিন ১৫টি বিবাহ
+                                বিচ্ছেদ</a>
+                        </div>
+
                     </div>
                     <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
-                        <a href="#" class="text-base md:text-lg hover:text-[#f00]">৩ ঘণ্টা পর ঢাকা-ময়মনসিংহে ট্রেন চলাচল
-                            শুরু
-                        </a>
+                        <div class="flex-1 overflow-hidden">
+                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">৩ ঘণ্টা পর
+                                ঢাকা-ময়মনসিংহে ট্রেন চলাচল
+                                শুরু
+                            </a>
+                        </div>
+
                     </div>
                     <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
-                        <a href="#" class="text-base md:text-lg hover:text-[#f00]">বরিশালে স্কুলছাত্র খুন</a>
+                        <div class="flex-1 overflow-hidden">
+                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">বরিশালে
+                                স্কুলছাত্র খুন</a>
+                        </div>
+
                     </div>
                     <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
-                        <a href="#" class="text-base md:text-lg hover:text-[#f00]">বরিশালে অভিনব কৌশলে বিদ্যুৎ চুরি</a>
+                        <div class="flex-1 overflow-hidden">
+                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">বরিশালে অভিনব
+                                কৌশলে বিদ্যুৎ চুরি</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -182,7 +223,77 @@
             <div class="w-full mb-7">
                 <img class="w-full h-auto" src="../../../public/uploads/biggapon/biggapon-1.gif">
             </div>
+
+            <!--রাজনীতি এবং অর্থনীতি-->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+
+                <!--রাজনীতি ক্যাটাগরি-->
+                <div>
+                    <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                        <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                            <a>
+                                <i class="fa-solid fa-bars pr-2"></i>রাজনীতি
+                            </a>
+                        </div>
+                        <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+                    </div>
+                    <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="../../../public/uploads/post/bnp-20171120133207.jpg"
+                                class="transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="w-full p-2">
+                            <a href="#"
+                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">‘প্রধানমন্ত্রী
+                                পদত্যাগ করলে জনগণও তাকে ক্ষমা করে দেবে’</a>
+                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">প্রধানমন্ত্রী শেখ হাসিনাকে
+                                বিএনপি চেয়ারপারসন বেগম খালেদা জিয়া ক্ষমা করেছেন, আমরাও ক্ষমা করে দেব। কিন্তু<a href="#"
+                                    class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                        </div>
+
+                        <div>
+                            <div v-for="i in 4" :key="i"
+                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+
+                                <img src="../../../public/uploads/post/tarek-20171119104531-600x337.jpg"
+                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+
+                                <div class="flex-1 overflow-hidden">
+
+                                    <a href="#"
+                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        তারেকের জন্মদিনে কেক কাটবেন খালেদা
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                                <span class="text-base cursor-pointer">আরো খবর..</span>
+                                <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--অর্থনীতি ক্যাটাগরি-->
+                <div>
+                    <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                        <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                            <a>
+                                <i class="fa-solid fa-bars pr-2"></i>অর্থনীতি
+                            </a>
+                        </div>
+                        <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- সাইডবার -->
         <div class="hidden lg:block flex-1">
             <div class="mb-7">
                 <div class="flex items-center bg-[#f7f7f7] text-[#333] text-lg border-l-5 border-[#f00f00] p-2 mb-2">
@@ -218,7 +329,8 @@
                     <a href="#"
                         class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">ডেন্টালে
                         ভর্তি : ৪৮ ঘণ্টায় ১১ সহস্রাধিক আবেদন</a>
-                    <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">চলতি বছর সরকারি-বেসরকারি ডেন্টাল কলেজে গত
+                    <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">চলতি বছর সরকারি-বেসরকারি ডেন্টাল কলেজে
+                        গত
                         ৪৮ ঘণ্টার কম সময়ে ১১ হাজারেরও বেশি ভর্তিচ্ছুর আবেদন<a href="#"
                             class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                 </div>
@@ -309,7 +421,8 @@
                     <a href="#"
                         class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">বাল্যবিবাহ
                         রোধ করতে হবে সম্মিলিতভাবে</a>
-                    <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">বরগুনার পাথরঘাটা উপজেলায় বাল্যবিবাহের কারণে
+                    <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">বরগুনার পাথরঘাটা উপজেলায় বাল্যবিবাহের
+                        কারণে
                         ৪৫ জন ছাত্রীর চলমান জুনিয়র স্কুল সার্টিফিকেট (জেএসসি) ও জুনিয়র<a href="#"
                             class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                 </div>
