@@ -105,7 +105,7 @@
                         class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] pb-2">
                         কর দিয়ে দেশের উন্নয়নের একজন
                         অংশীদার আমি</h2>
-                    <p class="text-base md:text-lg text-[#333] line-clamp-3">‘সরকার দেশের যে উন্নয়ন করছে, আমি প্রতিবছর
+                    <p class="text-sm md:text-base text-[#333] line-clamp-3">‘সরকার দেশের যে উন্নয়ন করছে, আমি প্রতিবছর
                         আয়কর দিয়ে দেশের সেই
                         উন্নয়নের একজন
                         <a href="#" class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a>
@@ -206,7 +206,7 @@
                 </div>
                 <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
             </div>
-            <div class="w-full group overflow-hidden shadow-lg/5">
+            <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
                 <div class="w-full h-full overflow-hidden">
                     <img src="../../../public/uploads/post/dental-college-20171019191958-600x337.jpg"
                         class="transition-transform duration-600 group-hover:scale-120">
@@ -215,9 +215,63 @@
                     <a href="#"
                         class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] py-2 block">ডেন্টালে
                         ভর্তি : ৪৮ ঘণ্টায় ১১ সহস্রাধিক আবেদন</a>
-                    <p class="text-base md:text-lg text-[#333] line-clamp-3">চলতি বছর সরকারি-বেসরকারি ডেন্টাল কলেজে গত
+                    <p class="text-sm md:text-base text-[#333] line-clamp-3">চলতি বছর সরকারি-বেসরকারি ডেন্টাল কলেজে গত
                         ৪৮ ঘণ্টার কম সময়ে ১১ হাজারেরও বেশি ভর্তিচ্ছুর আবেদন<a href="#"
                             class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                </div>
+
+                <div>
+                    <div v-for="i in 4" :key="i"
+                        class="flex text-lg font-medium border-b-1 border-[#bec9d2] gap-3 py-2">
+                        <img src="../../../public/uploads/post/medical-20171106113824-600x337.jpg"
+                            class="w-[120px] h-auto cursor-pointer">
+                        <a class="cursor-pointer transition-colors duration-600 hover:text-red-600">সোহরাওয়ার্দীতে
+                            দুই সপ্তাহ ঝুঁকিপূর্ণ অস্ত্রোপচার বন্ধ</a>
+                    </div>
+                    <div class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                        <span class="text-base cursor-pointer">আরো খবর..</span>
+                        <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--সাহিত্য ক্যাটাগরি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>সাহিত্য
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                <div class="w-full h-full overflow-hidden">
+                    <img src="../../../public/uploads/post/rudro-20171016120759.jpg"
+                        class="transition-transform duration-600 group-hover:scale-120">
+                </div>
+                <div class="w-full p-2">
+                    <a href="#"
+                        class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] py-2 block">রুদ্র
+                        মুহম্মদ শহিদুল্লাহর জন্মদিন আজ</a>
+                    <p class="text-sm md:text-base text-[#333] line-clamp-3">প্রেম ও দ্রোহের কবি রুদ্র মুহম্মদ
+                        শহিদুল্লাহর আজ ৬১তম জন্মবার্ষিকী। ১৯৫৬ সালের আজকের এই দিনে<a href="#"
+                            class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                </div>
+
+                <div>
+                    <div v-for="i in 4" :key="i"
+                        class="flex text-lg font-medium border-b-1 border-[#bec9d2] gap-3 py-2">
+                        <img src="../../../public/uploads/post/shamsur-rahman-20171023093303-600x337.jpg"
+                            class="w-[120px] h-auto cursor-pointer">
+                        <a class="cursor-pointer transition-colors duration-600 hover:text-red-600">কবি শামসুর রাহমানের
+                            ৮৯তম জন্মদিন আজ</a>
+                    </div>
+                    <div class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                        <span class="text-base cursor-pointer">আরো খবর..</span>
+                        <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                    </div>
+
                 </div>
             </div>
 
