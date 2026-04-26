@@ -26,7 +26,7 @@
                 <img src="../../../../public/uploads/logo/logo.png" class="mx-auto lg:mx-0">
             </div>
             <div class="w-full lg:w-2/3 hidden md:block">
-                <img src="../../../../public/uploads/bannar/bannar.gif" class="w-full">
+                <img src="../../../../public/uploads/bannar/bannar.jpeg" class="w-full">
             </div>
         </div>
         <div class="flex flex-col xl:flex-row justify-between items-stretch mb-4 gap-2">

@@ -8,19 +8,18 @@
                 <router-view />
             </main>
 
-            <!-- ফুটার -->
-            <footer class="border-t py-6 text-center text-gray-500">
-                &copy; 2024 Ajker News. All rights reserved.
-            </footer>
+            <Footer />
         </div>
     </div>
 </template>
 
 <script>
 import Navbar from '../frontEnd/layout/Navbar.vue';
+import Footer from '../frontEnd/layout/Footer.vue';
 export default {
     components: {
-        Navbar
+        Navbar,
+        Footer
     }
 }
 </script>
