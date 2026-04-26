@@ -339,6 +339,60 @@
             <div class="w-full mb-7">
                 <img class="w-full h-auto" src="../../../public/uploads/biggapon/biggapon-1.gif">
             </div>
+
+            <!--বিনোদন ক্যাটাগরি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>বিনোদন
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-7 mb-7">
+                <div class="w-full md:w-2/3 group shadow-lg/5">
+                    <div class="w-full overflow-hidden">
+                        <img src="../../../public/uploads/post/helen-20171118142634-600x337.jpg"
+                            class="w-full transition-transform duration-600 group-hover:scale-120">
+                    </div>
+                    <div class="p-2">
+                        <a href="#"
+                            class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">ফেসওয়াশে’র
+                            বিজ্ঞাপনে হেলেন</a>
+                        <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">মাস তিনেক আগে গ্রামীণফোনের একটি
+                            ক্যাম্পেইনের বিজ্ঞাপনচিত্রের মডেল হয়েছিলেন পিজে হেলেন। বিরতি
+                            ভেঙে আবারও তিনি কাজে ফিরলেন, নতুন একটি বিজ্ঞাপনচিত্রের মডেল হলেন। এটি কুমারিকা পিম্পেল<a
+                                href="#" class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3">
+                    <div class="group shadow-lg/5">
+                        <div class="w-full overflow-hidden">
+                            <img src="../../../public/uploads/post/apu-biswas-20171120092445-600x337.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="p-2">
+                            <a href="#"
+                                class="text-md md:text-xl font-medium transition-colors duration-600 hover:text-[#f00] inline">সিনেমা
+                                নয় শারীরিক সুস্থতার কথা ভাবছেন অপু</a>
+                        </div>
+                    </div>
+
+                    <div class="group shadow-lg/5">
+                        <div class="w-full overflow-hidden">
+                            <img src="../../../public/uploads/post/jahid-hasan-2-20171120103432-600x337.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="p-2">
+                            <a href="#"
+                                class="text-md md:text-xl font-medium transition-colors duration-600 hover:text-[#f00] inline">সিনেমা
+                                নয় শারীরিক সুস্থতার কথা ভাবছেন অপু</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
         <!-- সাইডবার -->
