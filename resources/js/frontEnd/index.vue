@@ -665,29 +665,56 @@
             </div>
 
             <!--ফটো গ্যালারি-->
-            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
-                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
-                    <a>
-                        <i class="fa-solid fa-bars pr-2"></i>ফটো
-                    </a>
+            <div class="mb-7">
+                <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                    <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                        <a>
+                            <i class="fa-solid fa-bars pr-2"></i>ফটো গ্যালারি
+                        </a>
+                    </div>
+                    <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
                 </div>
-                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+                <swiper :modules="modules" :slides-per-view="1" :loop="true" :speed="800"
+                    :autoplay="{ delay: 3000, disableOnInteraction: false }" :navigation="{
+                        nextEl: '.custom-next',
+                        prevEl: '.custom-prev'
+                    }">
+                    <swiper-slide v-for="i in 3" :key="i">
+                        <div class="relative w-full h-full">
+                            <img src="../../../public/uploads/photo_gallery/u2019u2019u2019u2019u2019u2019u2019-84-600x337.jpg"
+                                class="w-full">
+                            <div class="absolute bottom-0 left-0 w-full bg-black/40 text-white py-3">
+                                <h1 class="text-lg md:text-xl lg:text-2xl px-6">সবুজের মাঝে হাস্যোজ্জ্বল মেহজাবিন।</h1>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                </swiper>
             </div>
-            <swiper :modules="modules" :slides-per-view="1" :loop="true" :speed="800"
-                :autoplay="{ delay: 3000, disableOnInteraction: false }" :navigation="{
-                    nextEl: '.custom-next',
-                    prevEl: '.custom-prev'
-                }">
-                <swiper-slide v-for="i in 3" :key="i">
-                    <div class="relative w-full h-full">
-                        <img src="../../../public/uploads/photo_gallery/u2019u2019u2019u2019u2019u2019u2019-84-600x337.jpg"
-                            class="w-full">
-                        <div class="absolute bottom-0 left-0 w-full bg-black/40 text-white py-3">
-                            <h1 class="text-lg md:text-xl lg:text-2xl px-6">সবুজের মাঝে হাস্যোজ্জ্বল মেহজাবিন।</h1>
+
+            <!--ভিডিও গ্যালারি-->
+            <div class="mb-7">
+                <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                    <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                        <a>
+                            <i class="fa-solid fa-bars pr-2"></i>ভিডিও গ্যালারি
+                        </a>
+                    </div>
+                    <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+                    <div v-for="i in 6" :key="i" class="bg-white shadow-md overflow-hidden group">
+                        <div class="aspect-video w-full bg-black">
+                            <iframe class="w-full h-full"
+                                src="https://www.youtube.com/embed/AwNPc9JZ1Ng?si=HlerwlzZlGzyl23H"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
-                </swiper-slide>
-            </swiper>
+                </div>
+            </div>
+
         </div>
 
         <!-- সাইডবার -->
