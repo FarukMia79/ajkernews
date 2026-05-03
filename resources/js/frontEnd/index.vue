@@ -335,6 +335,115 @@
                 </div>
             </div>
 
+
+            <!--আইন-আদালত এবং তথ্যপ্রযুক্তি-->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+
+                <!--আইন-আদালত ক্যাটাগরি-->
+                <div>
+                    <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                        <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                            <a>
+                                <i class="fa-solid fa-bars pr-2"></i>আইন-আদালত
+                            </a>
+                        </div>
+                        <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+                    </div>
+                    <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="../../../public/uploads/post/bank-20171120143438.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="w-full p-2">
+                            <a href="#"
+                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">সোনালী
+                                ব্যাংকের তিন পদের নিয়োগ আপাতত স্থগিত</a>
+                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">সোনালী ব্যাংকের সিনিয়র অফিসার,
+                                অফিসার ও অফিসার (ক্যাশ) পদে নিয়োগ আপাতত স্থগিত থাকবে বলে আদেশ<a href="#"
+                                    class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                        </div>
+
+                        <div>
+                            <div v-for="i in 4" :key="i"
+                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+
+                                <img src="../../../public/uploads/post/nurse-20171117193636.jpg"
+                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+
+                                <div class="flex-1 overflow-hidden">
+
+                                    <a href="#"
+                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        প্রশ্ন ফাঁস : ঢামেকের দুই নার্স তিন দিনের রিমান্ডে
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                                <span class="text-base cursor-pointer">আরো খবর..</span>
+                                <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--তথ্যপ্রযুক্তি ক্যাটাগরি-->
+                <div>
+                    <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                        <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                            <a>
+                                <i class="fa-solid fa-bars pr-2"></i>তথ্যপ্রযুক্তি
+                            </a>
+                        </div>
+                        <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+                    </div>
+                    <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="../../../public/uploads/post/mobile-20171114133119-600x337.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="w-full p-2">
+                            <a href="#"
+                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">দেশে
+                                মোবাইল ফোন গ্রাহক ১৪ কোটি ছাড়িয়েছে
+                            </a>
+                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">প্রায় ১৭ কোটি জনসংখ্যার
+                                বাংলাদেশের মানুষের হাতে ১৪ কোটি ৭ লাখ ১৩ হাজার মোবাইল সিম রয়েছে। যাদের মধ্যে<a href="#"
+                                    class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                        </div>
+
+                        <div>
+                            <div v-for="i in 4" :key="i"
+                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+
+                                <img src="../../../public/uploads/post/robot-1-20171115175624-600x337.jpg"
+                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+
+                                <div class="flex-1 overflow-hidden">
+
+                                    <a href="#"
+                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        বাংলাদেশে রোবট রেস্টুরেন্টের যাত্রা শুরু
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                                <span class="text-base cursor-pointer">আরো খবর..</span>
+                                <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!--বিজ্ঞাপন-->
             <div class="w-full mb-7">
                 <img class="w-full h-auto" src="../../../public/uploads/biggapon/biggapon-1.gif">
@@ -391,6 +500,113 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+
+            <!--খেলাধুলা এবং ধর্ম-->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+
+                <!--খেলাধুলা ক্যাটাগরি-->
+                <div>
+                    <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                        <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                            <a>
+                                <i class="fa-solid fa-bars pr-2"></i>খেলাধুলা
+                            </a>
+                        </div>
+                        <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+                    </div>
+                    <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="../../../public/uploads/post/brazil-20171119145916-600x337.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="w-full p-2">
+                            <a href="#"
+                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">বিশ্বকাপে
+                                যেমন হতে পারে ব্রাজিল-আর্জেন্টিনার গ্রুপ</a>
+                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">বাছাই পর্বের লড়াই শেষ।
+                                স্বাগতিক রাশিয়াসহ বিশ্বকাপে জায়গা করে নিয়েছে ৩২টি দেশ। আগামী ১ ডিসেম্বর<a href="#"
+                                    class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                        </div>
+
+                        <div>
+                            <div v-for="i in 4" :key="i"
+                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+
+                                <img src="../../../public/uploads/post/ronaldo-1-20171119092537-600x337.jpg"
+                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+
+                                <div class="flex-1 overflow-hidden">
+
+                                    <a href="#"
+                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        রিয়ালের ড্রতে আরও এগিয়ে গেল বার্সা
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                                <span class="text-base cursor-pointer">আরো খবর..</span>
+                                <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--ধর্ম ক্যাটাগরি-->
+                <div>
+                    <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                        <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                            <a>
+                                <i class="fa-solid fa-bars pr-2"></i>ধর্ম
+                            </a>
+                        </div>
+                        <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+                    </div>
+                    <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="../../../public/uploads/post/Kabar-Top20151007112831-600x337.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="w-full p-2">
+                            <a href="#"
+                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">কবরের
+                                আজাব হতে মুক্তির আমল</a>
+                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">পৃথিবীতে এমন কোনো মানুষ খুঁজে
+                                পাওয়া যাবে না যে, সে কবরে আজাব ভোগ করতে আগ্রহী।<a href="#"
+                                    class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                        </div>
+
+                        <div>
+                            <div v-for="i in 4" :key="i"
+                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+
+                                <img src="../../../public/uploads/post/Amal-Top20151111104347-600x337.jpg"
+                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+
+                                <div class="flex-1 overflow-hidden">
+
+                                    <a href="#"
+                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        শয়তানের আক্রমণ থেকে রক্ষার আমল
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                                <span class="text-base cursor-pointer">আরো খবর..</span>
+                                <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
