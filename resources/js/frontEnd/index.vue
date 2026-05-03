@@ -164,7 +164,7 @@
     </div>
 
     <div class="flex w-full gap-7">
-        <div class="w-full lg:w-2/3">
+        <div class="w-full md:w-2/3">
 
             <!-- জাতীয় -->
             <div class="flex w-full justify-center items-center border-b-2 border-[#f00f00] text-xl">
@@ -458,7 +458,7 @@
                 </div>
                 <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
             </div>
-            <div class="flex flex-col lg:flex-row gap-7 mb-7">
+            <div class="flex flex-col md:flex-row gap-7 mb-7">
                 <div class="w-full md:w-2/3 group shadow-lg/5">
                     <div class="w-full overflow-hidden">
                         <img src="../../../public/uploads/post/helen-20171118142634-600x337.jpg"
@@ -475,7 +475,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="w-full lg:w-1/3">
+                <div class="w-full md:w-1/3">
                     <div class="group shadow-lg/5">
                         <div class="w-full overflow-hidden">
                             <img src="../../../public/uploads/post/apu-biswas-20171120092445-600x337.jpg"
@@ -609,10 +609,89 @@
                     </div>
                 </div>
             </div>
+
+            <!--ভ্রমণ ক্যাটাগরি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>ভ্রমণ
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-7 mb-7">
+                <div class="w-full md:w-2/3 group shadow-lg/5">
+                    <div class="w-full overflow-hidden">
+                        <img src="../../../public/uploads/post/snowdonia-cover-20171102184434-600x337.jpg"
+                            class="w-full transition-transform duration-600 group-hover:scale-120">
+                    </div>
+                    <div class="p-2">
+                        <a href="#"
+                            class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">একশ’র
+                            বেশি হ্রদ যে উদ্যানে</a>
+                        <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">লেক বা হ্রদ প্রায় সব উদ্যানেই
+                            রয়েছে। কম আর বেশি। তবে ওয়েলসের স্নোডোনিয়া জাতীয় উদ্যানে হ্রদ রয়েছে একশ’র বেশি। দেশের বাইরে
+                            গেলে এখান থেকে ঘুরে<a href="#"
+                                class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <div class="group shadow-lg/5">
+                        <div class="w-full overflow-hidden">
+                            <img src="../../../public/uploads/post/foys-lake-cover-20171021195737-600x337.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="p-2">
+                            <a href="#"
+                                class="text-base md:text-lg lg:text-xl font-medium transition-colors duration-600 hover:text-[#f00] inline">ঘুরে
+                                আসুন ফয়’স লেক</a>
+                        </div>
+                    </div>
+
+                    <div class="group shadow-lg/5">
+                        <div class="w-full overflow-hidden">
+                            <img src="../../../public/uploads/post/canada-20171016191621-600x337.png"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="p-2">
+                            <a href="#"
+                                class="text-base md:text-lg lg:text-xl font-medium transition-colors duration-600 hover:text-[#f00] inline">কানাডার
+                                ব্যানফ জাতীয় উদ্যান</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--ফটো গ্যালারি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>ফটো
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <swiper :modules="modules" :slides-per-view="1" :loop="true" :speed="800"
+                :autoplay="{ delay: 3000, disableOnInteraction: false }" :navigation="{
+                    nextEl: '.custom-next',
+                    prevEl: '.custom-prev'
+                }">
+                <swiper-slide v-for="i in 3" :key="i">
+                    <div class="relative w-full h-full">
+                        <img src="../../../public/uploads/photo_gallery/u2019u2019u2019u2019u2019u2019u2019-84-600x337.jpg"
+                            class="w-full">
+                        <div class="absolute bottom-0 left-0 w-full bg-black/40 text-white py-3">
+                            <h1 class="text-lg md:text-xl lg:text-2xl px-6">সবুজের মাঝে হাস্যোজ্জ্বল মেহজাবিন।</h1>
+                        </div>
+                    </div>
+                </swiper-slide>
+            </swiper>
         </div>
 
         <!-- সাইডবার -->
-        <div class="hidden lg:block flex-1">
+        <div class="hidden md:block flex-1">
             <div class="mb-7">
                 <div class="flex items-center bg-[#f7f7f7] text-[#333] text-lg border-l-5 border-[#f00f00] p-2 mb-2">
                     <h4>ফেসবুকে আমরা...</h4>
