@@ -629,7 +629,7 @@
                         <a href="#"
                             class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">একশ’র
                             বেশি হ্রদ যে উদ্যানে</a>
-                        <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">লেক বা হ্রদ প্রায় সব উদ্যানেই
+                        <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">লেক বা হ্রদ প্রায় সব উদ্যানেই
                             রয়েছে। কম আর বেশি। তবে ওয়েলসের স্নোডোনিয়া জাতীয় উদ্যানে হ্রদ রয়েছে একশ’র বেশি। দেশের বাইরে
                             গেলে এখান থেকে ঘুরে<a href="#"
                                 class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a>
@@ -712,6 +712,168 @@
                             </iframe>
                         </div>
                     </div>
+                </div>
+            </div>
+
+
+            <!--প্রবাস এবং ফিচার-->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+
+                <!--প্রবাস ক্যাটাগরি-->
+                <div>
+                    <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                        <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                            <a>
+                                <i class="fa-solid fa-bars pr-2"></i>প্রবাস
+                            </a>
+                        </div>
+                        <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+                    </div>
+                    <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="../../../public/uploads/post/saudi2-20171119163613-600x337.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="w-full p-2">
+                            <a href="#"
+                                class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">সৌদিতে
+                                ২৪ হাজার অভিবাসী গ্রেফতার</a>
+                            <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">অভিবাসী ও শ্রমিক আইন লঙ্ঘনের
+                                অভিযোগে সৌদি আরবে ৩ দিনে প্রায় ২৪ হাজার প্রবাসীকে গ্রেফতার করা হয়েছে।<a href="#"
+                                    class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                        </div>
+
+                        <div>
+                            <div v-for="i in 4" :key="i"
+                                class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+
+                                <img src="../../../public/uploads/post/kuwait-e-psc-exam-hall-phot-20171120082347-600x337.jpg"
+                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+
+                                <div class="flex-1 overflow-hidden pr-2">
+
+                                    <a href="#"
+                                        class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        কুয়েতেও অনুষ্ঠিত হচ্ছে প্রাথমিক সমাপনী পরীক্ষা
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                                <span class="text-base cursor-pointer">আরো খবর..</span>
+                                <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--ফিচার ক্যাটাগরি-->
+                <div>
+                    <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                        <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                            <a>
+                                <i class="fa-solid fa-bars pr-2"></i>ফিচার
+                            </a>
+                        </div>
+                        <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+                    </div>
+                    <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                        <div class="w-full h-full overflow-hidden">
+                            <img src="../../../public/uploads/post/adibasi-cover-20170809131029-600x337.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="w-full p-2">
+                            <a href="#"
+                                class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">বাংলাদেশের
+                                আদিবাসী সম্প্রদায়</a>
+                            <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">বাংলাদেশের আদিবাসী জনগোষ্ঠীর
+                                পরতে পরতে লুকিয়ে আছে নতুন রঙের ছটা। একটি স্বতন্ত্র জাতিসত্ত্বার যে সব<a href="#"
+                                    class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                        </div>
+
+                        <div>
+                            <div v-for="i in 4" :key="i"
+                                class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+
+                                <img src="../../../public/uploads/post/colour-cover-20170917124421-600x337.jpg"
+                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+
+                                <div class="flex-1 overflow-hidden pr-2">
+
+                                    <a href="#"
+                                        class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        পছন্দের রং বলে দেবে আপনার বৈশিষ্ট্য
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div
+                                class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                                <span class="text-base cursor-pointer">আরো খবর..</span>
+                                <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--গণমাধ্যম ক্যাটাগরি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>গণমাধ্যম
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-7 mb-7">
+                <div class="w-full md:w-2/3 group shadow-lg/5">
+                    <div class="w-full overflow-hidden">
+                        <img src="../../../public/uploads/post/ASikjpg20170708150339.jpg"
+                            class="w-full transition-transform duration-600 group-hover:scale-120">
+                    </div>
+                    <div class="p-2">
+                        <a href="#"
+                            class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">আসিকের
+                            মুক্তি দাবিতে ২৪ ঘণ্টার আল্টিমেটাম সাংবাদিকদের</a>
+                        <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">ডেইলি অবজারভারের ফটোসাংবাদিক আসিক
+                            মোহাম্মদের বিরুদ্ধে মিথ্যা মামলা প্রত্যাহারের দাবিতে জাতীয় প্রেসক্লাবের সামনে দুই ঘণ্টা সড়ক
+                            অবরোধ করে মানববন্ধন<a href="#"
+                                class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <div class="group shadow-lg/5">
+                        <div class="w-full overflow-hidden">
+                            <img src="../../../public/uploads/post/jago-fm-20171028211942-600x337.jpg"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="p-2">
+                            <a href="#"
+                                class="text-base md:text-lg lg:text-xl font-medium transition-colors duration-600 hover:text-[#f00] inline">তারুণ্যকে
+                                জাগিয়ে জাগো এফএম তৃতীয় বছরে</a>
+                        </div>
+                    </div>
+
+                    <div class="group shadow-lg/5">
+                        <div class="w-full overflow-hidden">
+                            <img src="../../../public/uploads/post/utpol-bg-20171023005708-600x337.gif"
+                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                        </div>
+                        <div class="p-2">
+                            <a href="#"
+                                class="text-base md:text-lg lg:text-xl font-medium transition-colors duration-600 hover:text-[#f00] inline">১৩
+                                দিন নিখোঁজ সাংবাদিক উৎপল : থানায় জিডি</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
