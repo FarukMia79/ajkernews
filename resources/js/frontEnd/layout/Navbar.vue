@@ -21,15 +21,15 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col lg:flex-row justify-between py-6 items-center gap-6 lg:gap-10">
-            <div class="w-full lg:w-1/3 cursor-pointer">
-                <img src="../../../../public/uploads/logo/logo.png" class="mx-auto lg:mx-0">
+        <div class="flex flex-col md:flex-row justify-between py-6 items-center gap-6 md:gap-10">
+            <div class="w-full md:w-1/3 cursor-pointer">
+                <img src="../../../../public/uploads/logo/logo.png" class="mx-auto md:mx-0">
             </div>
-            <div class="w-full lg:w-2/3 hidden md:block">
+            <div class="w-full md:w-2/3 hidden md:block">
                 <img src="../../../../public/uploads/bannar/bannar.jpeg" class="w-full">
             </div>
         </div>
-        <div class="flex flex-col xl:flex-row justify-between items-stretch mb-4 gap-2">
+        <div class="flex flex-col md:flex-row justify-between items-stretch mb-4 gap-2">
             <div class="flex flex-1 w-full text-lg">
                 <button class="bg-[#0a4466] text-white py-2 px-4 whitespace-nowrap">শিরোনাম :</button>
                 <div
@@ -44,7 +44,7 @@
                     </marquee>
                 </div>
             </div>
-            <div class="flex w-full lg:w-auto text-lg">
+            <div class="flex w-full md:w-auto text-lg">
                 <input type="search" placeholder="এখানে লিখুন.."
                     class="flex-1 md:w-64 border border-[#bec9d2] focus:outline-none focus:ring-1 focus:ring-[#1879d0] py-2 px-2">
                 <button

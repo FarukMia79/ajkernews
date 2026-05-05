@@ -1,18 +1,19 @@
 <template>
-    <div class="w-full flex flex-col lg:flex-row justify-between gap-7 mb-7">
-        <div class="w-full lg:w-1/2 h-[300px] md:h-[408px] lg:h-[380px] relative group shadow-md p-1 bg-white">
+    <div class="w-full flex flex-col md:flex-row justify-between gap-7 mb-7">
+        <div class="w-full md:w-1/2 relative group shadow-md p-1 bg-white h-full">
             <!-- Swiper Component -->
             <swiper :modules="modules" :slides-per-view="1" :loop="true" :speed="800"
                 :autoplay="{ delay: 3000, disableOnInteraction: false }" :navigation="{
                     nextEl: '.custom-next',
                     prevEl: '.custom-prev',
-                }" class="h-full w-full">
+                }" class="w-full">
                 <swiper-slide v-for="i in 3" :key="i">
-                    <div class="relative w-full h-full">
-                        <img src="../../../public/uploads/post/0.35246415-600x337.jpg"
-                            class="w-full h-full object-cover" alt="News">
+                    <div class="relative w-full">
+                        <img src="../../../public/uploads/post/0.35246415-600x337.jpg" class="w-full object-cover"
+                            alt="News">
                         <div class="absolute bottom-0 left-0 w-full bg-black/40 text-white px-6 py-2">
-                            <h2 class="text-xl md:text-2xl font-medium leading-tight">বিশ্বকাপের ফাইনালে বাংলাদেশ: পুরো
+                            <h2 class="text-lg md:text-xl lg:text-2xl font-medium leading-tight">বিশ্বকাপের ফাইনালে
+                                বাংলাদেশ: পুরো
                                 দেশে উৎসবের
                                 আমেজ</h2>
                         </div>
@@ -32,9 +33,9 @@
                 <i class="fa-solid fa-angle-right text-white text-3xl"></i>
             </button>
         </div>
-        <div class="w-full lg:w-1/2 flex flex-col md:flex-row gap-7 h-auto lg:h-[380px]">
-            <div class="w-full md:w-1/2 overflow-hidden flex flex-col bg-white">
-                <div class="flex text-sm md:text-lg font-bold">
+        <div class="w-full md:w-1/2 flex flex-col md:flex-row gap-7">
+            <div class="w-full md:w-1/2 md:h-[310px] lg:h-[355px] overflow-hidden flex flex-col bg-white">
+                <div class="flex text-sm md:text-base lg:text-lg font-bold">
                     <button class="w-1/2 bg-[#f0f0f0] py-2border-t-3 border-[#7719aa] cursor-pointer">
                         সর্বশেষ সংবাদ
                     </button>
@@ -42,11 +43,13 @@
                         জনপ্রিয় সংবাদ
                     </button>
                 </div>
-                <div class="h-[365px] overflow-y-auto text-lg border-x-1 border-b-1 border-[#bec9d2] p-2">
-                    <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
+                <div class=" overflow-y-auto border-x-1 border-b-1 border-[#bec9d2] px-1">
+                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
-                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">প্রথম প্রহরে
+                            <a href="#"
+                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">প্রথম
+                                প্রহরে
                                 নয়, সিলেটে বিজয়
                                 দিবসের
                                 অনুষ্ঠান
@@ -54,103 +57,114 @@
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
+                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
-                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">সিলেটে সড়ক
+                            <a href="#"
+                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">সিলেটে
+                                সড়ক
                                 দুর্ঘটনায় যুবক নিহত</a>
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
+                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
-                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">রাজশাহীতে
+                            <a href="#"
+                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">রাজশাহীতে
                                 ১৫টি স্বর্ণের বারসহ যুবক
                                 গ্রেফতার</a>
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
+                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
-                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">রাজশাহীতে
+                            <a href="#"
+                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">রাজশাহীতে
                                 ট্রাকবোঝায় ওএমএসের চাল
                                 উদ্ধার</a>
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
+                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
-                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">রংপুরে
+                            <a href="#"
+                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">রংপুরে
                                 পুলিশের সঙ্গে ‘বন্দুকযুদ্ধে’
                                 চরমপন্থী
                                 নিহত</a>
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
+                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
-                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">রংপুরে
+                            <a href="#"
+                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">রংপুরে
                                 পার্টিকেল বোর্ড কারখানায়
                                 আগুন</a>
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
+                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
-                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">ময়মনসিংহে
+                            <a href="#"
+                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">ময়মনসিংহে
                                 প্রতিদিন ১৫টি বিবাহ
                                 বিচ্ছেদ</a>
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
+                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
-                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">৩ ঘণ্টা পর
+                            <a href="#"
+                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">৩
+                                ঘণ্টা পর
                                 ঢাকা-ময়মনসিংহে ট্রেন চলাচল
                                 শুরু
                             </a>
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
+                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
-                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">বরিশালে
+                            <a href="#"
+                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">বরিশালে
                                 স্কুলছাত্র খুন</a>
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-2 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-sm text-[#f00] mt-1"></i>
+                    <div class="py-1 flex items-start gap-2">
+                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
-                            <a href="#" class="display-table w-fit text-base md:text-lg hover:text-[#f00]">বরিশালে অভিনব
+                            <a href="#"
+                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">বরিশালে
+                                অভিনব
                                 কৌশলে বিদ্যুৎ চুরি</a>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <div class="group w-full md:w-1/2 shadow-lg overflow-hidden">
+            <div class="group w-full md:w-1/2 h-fit shadow-lg overflow-hidden">
                 <div class="overflow-hidden">
                     <img class="w-full h-full transition-transform duration-600 group-hover:scale-120"
                         src="../../../public/uploads/post/b5ad7e74e5c010d7f52850a38f7a3ad3-5a10328b77874.jpg">
                 </div>
                 <div class="py-4 px-2">
                     <h2
-                        class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] pb-2">
+                        class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] pb-2">
                         কর দিয়ে দেশের উন্নয়নের একজন
                         অংশীদার আমি</h2>
-                    <p class="text-sm md:text-base text-[#333] line-clamp-3">‘সরকার দেশের যে উন্নয়ন করছে, আমি প্রতিবছর
+                    <p class="text-sm lg:text-base text-[#333] line-clamp-4">‘সরকার দেশের যে উন্নয়ন করছে, আমি প্রতিবছর
                         আয়কর দিয়ে দেশের সেই
                         উন্নয়নের একজন
-                        <a href="#" class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a>
-                    </p>
+                    </p><a href="#" class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a>
                 </div>
             </div>
         </div>
@@ -183,9 +197,9 @@
                     <div v-for="i in 8" :key="i" class="flex border-b-1 border-[#bec9d2] py-2 gap-3">
                         <img class="w-[170px] md:w-[130px] h-auto cursor-pointer"
                             src="../../../public/uploads/post/parlament-sm-20171120165706.jpg">
-                        <div class="flex-1 overflow-hidden">
+                        <div class="flex-1 overflow-hidden pr-2">
                             <a href="#"
-                                class="display-table w-fit text-base md:text-lg cursor-pointer hover:text-red-600 transition-colors duration-600">সরকারি
+                                class="text-base md:text-base lg:text-lg font-medium display-table w-fit cursor-pointer hover:text-red-600 transition-colors duration-600">সরকারি
                                 অফিসে ৩ লাখ ৬০ হাজার পদ শূন্য</a>
                         </div>
 
@@ -218,7 +232,7 @@
                         </div>
                         <div class="p-2">
                             <a href="#"
-                                class="text-base md:text-lg cursor-pointer hover:text-red-600 transition-colors duration-600">২০২৭
+                                class="text-base md:text-base lg:text-lg font-medium cursor-pointer hover:text-red-600 transition-colors duration-600">২০২৭
                                 সালের মধ্যে চালকবিহীন গাড়ি আনছে নেপাল</a>
                         </div>
                     </div>
@@ -248,24 +262,24 @@
                         </div>
                         <div class="w-full p-2">
                             <a href="#"
-                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">‘প্রধানমন্ত্রী
+                                class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">‘প্রধানমন্ত্রী
                                 পদত্যাগ করলে জনগণও তাকে ক্ষমা করে দেবে’</a>
-                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">প্রধানমন্ত্রী শেখ হাসিনাকে
+                            <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">প্রধানমন্ত্রী শেখ হাসিনাকে
                                 বিএনপি চেয়ারপারসন বেগম খালেদা জিয়া ক্ষমা করেছেন, আমরাও ক্ষমা করে দেব। কিন্তু<a href="#"
                                     class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                         </div>
 
                         <div>
                             <div v-for="i in 4" :key="i"
-                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+                                class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/tarek-20171119104531-600x337.jpg"
                                     class="w-[120px] h-auto cursor-pointer flex-shrink-0">
 
-                                <div class="flex-1 overflow-hidden">
+                                <div class="flex-1 overflow-hidden pr-2">
 
                                     <a href="#"
-                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
                                         তারেকের জন্মদিনে কেক কাটবেন খালেদা
                                     </a>
 
@@ -300,24 +314,24 @@
                         </div>
                         <div class="w-full p-2">
                             <a href="#"
-                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">উত্তরায়
+                                class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">উত্তরায়
                                 ফায়কা বুটিকসের যাত্রা শুরু</a>
-                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">দেশীয় পোশাকের সমাহারে রাজধানী
+                            <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">দেশীয় পোশাকের সমাহারে রাজধানী
                                 উত্তরার ৪ নম্বর সেক্টরে যাত্রা শুরু করলো ফায়কা ওম্যানস ক্লথিং বুটিকস।<a href="#"
                                     class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                         </div>
 
                         <div>
                             <div v-for="i in 4" :key="i"
-                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+                                class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/hsbc-20171118034650.jpg"
                                     class="w-[120px] h-auto cursor-pointer flex-shrink-0">
 
-                                <div class="flex-1 overflow-hidden">
+                                <div class="flex-1 overflow-hidden pr-2">
 
                                     <a href="#"
-                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
                                         পাঁচ প্রতিষ্ঠানকে রফতানির স্বীকৃতি দিল এইচএসবিসি
                                     </a>
 
@@ -356,24 +370,24 @@
                         </div>
                         <div class="w-full p-2">
                             <a href="#"
-                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">সোনালী
+                                class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">সোনালী
                                 ব্যাংকের তিন পদের নিয়োগ আপাতত স্থগিত</a>
-                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">সোনালী ব্যাংকের সিনিয়র অফিসার,
+                            <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">সোনালী ব্যাংকের সিনিয়র অফিসার,
                                 অফিসার ও অফিসার (ক্যাশ) পদে নিয়োগ আপাতত স্থগিত থাকবে বলে আদেশ<a href="#"
                                     class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                         </div>
 
                         <div>
                             <div v-for="i in 4" :key="i"
-                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+                                class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/nurse-20171117193636.jpg"
                                     class="w-[120px] h-auto cursor-pointer flex-shrink-0">
 
-                                <div class="flex-1 overflow-hidden">
+                                <div class="flex-1 overflow-hidden pr-2">
 
                                     <a href="#"
-                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
                                         প্রশ্ন ফাঁস : ঢামেকের দুই নার্স তিন দিনের রিমান্ডে
                                     </a>
 
@@ -408,25 +422,25 @@
                         </div>
                         <div class="w-full p-2">
                             <a href="#"
-                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">দেশে
+                                class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">দেশে
                                 মোবাইল ফোন গ্রাহক ১৪ কোটি ছাড়িয়েছে
                             </a>
-                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">প্রায় ১৭ কোটি জনসংখ্যার
+                            <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">প্রায় ১৭ কোটি জনসংখ্যার
                                 বাংলাদেশের মানুষের হাতে ১৪ কোটি ৭ লাখ ১৩ হাজার মোবাইল সিম রয়েছে। যাদের মধ্যে<a href="#"
                                     class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                         </div>
 
                         <div>
                             <div v-for="i in 4" :key="i"
-                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+                                class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/robot-1-20171115175624-600x337.jpg"
                                     class="w-[120px] h-auto cursor-pointer flex-shrink-0">
 
-                                <div class="flex-1 overflow-hidden">
+                                <div class="flex-1 overflow-hidden pr-2">
 
                                     <a href="#"
-                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
                                         বাংলাদেশে রোবট রেস্টুরেন্টের যাত্রা শুরু
                                     </a>
 
@@ -466,9 +480,9 @@
                     </div>
                     <div class="p-2">
                         <a href="#"
-                            class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">ফেসওয়াশে’র
+                            class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">ফেসওয়াশে’র
                             বিজ্ঞাপনে হেলেন</a>
-                        <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">মাস তিনেক আগে গ্রামীণফোনের একটি
+                        <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">মাস তিনেক আগে গ্রামীণফোনের একটি
                             ক্যাম্পেইনের বিজ্ঞাপনচিত্রের মডেল হয়েছিলেন পিজে হেলেন। বিরতি
                             ভেঙে আবারও তিনি কাজে ফিরলেন, নতুন একটি বিজ্ঞাপনচিত্রের মডেল হলেন। এটি কুমারিকা পিম্পেল<a
                                 href="#" class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a>
@@ -483,7 +497,7 @@
                         </div>
                         <div class="p-2">
                             <a href="#"
-                                class="text-md md:text-xl font-medium transition-colors duration-600 hover:text-[#f00] inline">সিনেমা
+                                class="text-base md:text-lg lg:text-xl font-medium transition-colors duration-600 hover:text-[#f00] inline">সিনেমা
                                 নয় শারীরিক সুস্থতার কথা ভাবছেন অপু</a>
                         </div>
                     </div>
@@ -495,8 +509,8 @@
                         </div>
                         <div class="p-2">
                             <a href="#"
-                                class="text-md md:text-xl font-medium transition-colors duration-600 hover:text-[#f00] inline">সিনেমা
-                                নয় শারীরিক সুস্থতার কথা ভাবছেন অপু</a>
+                                class="text-base md:text-lg lg:text-xl font-medium transition-colors duration-600 hover:text-[#f00] inline">কলকাতার
+                                ছবিতে জাহিদ হাসান</a>
                         </div>
                     </div>
 
@@ -523,24 +537,24 @@
                         </div>
                         <div class="w-full p-2">
                             <a href="#"
-                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">বিশ্বকাপে
+                                class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">বিশ্বকাপে
                                 যেমন হতে পারে ব্রাজিল-আর্জেন্টিনার গ্রুপ</a>
-                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">বাছাই পর্বের লড়াই শেষ।
+                            <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">বাছাই পর্বের লড়াই শেষ।
                                 স্বাগতিক রাশিয়াসহ বিশ্বকাপে জায়গা করে নিয়েছে ৩২টি দেশ। আগামী ১ ডিসেম্বর<a href="#"
                                     class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                         </div>
 
                         <div>
                             <div v-for="i in 4" :key="i"
-                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+                                class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/ronaldo-1-20171119092537-600x337.jpg"
                                     class="w-[120px] h-auto cursor-pointer flex-shrink-0">
 
-                                <div class="flex-1 overflow-hidden">
+                                <div class="flex-1 overflow-hidden pr-2">
 
                                     <a href="#"
-                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
                                         রিয়ালের ড্রতে আরও এগিয়ে গেল বার্সা
                                     </a>
 
@@ -575,24 +589,24 @@
                         </div>
                         <div class="w-full p-2">
                             <a href="#"
-                                class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">কবরের
+                                class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">কবরের
                                 আজাব হতে মুক্তির আমল</a>
-                            <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">পৃথিবীতে এমন কোনো মানুষ খুঁজে
+                            <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">পৃথিবীতে এমন কোনো মানুষ খুঁজে
                                 পাওয়া যাবে না যে, সে কবরে আজাব ভোগ করতে আগ্রহী।<a href="#"
                                     class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                         </div>
 
                         <div>
                             <div v-for="i in 4" :key="i"
-                                class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+                                class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/Amal-Top20151111104347-600x337.jpg"
                                     class="w-[120px] h-auto cursor-pointer flex-shrink-0">
 
-                                <div class="flex-1 overflow-hidden">
+                                <div class="flex-1 overflow-hidden pr-2">
 
                                     <a href="#"
-                                        class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                        class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
                                         শয়তানের আক্রমণ থেকে রক্ষার আমল
                                     </a>
 
@@ -913,9 +927,9 @@
                 </div>
                 <div class="w-full p-2">
                     <a href="#"
-                        class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">ডেন্টালে
+                        class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">ডেন্টালে
                         ভর্তি : ৪৮ ঘণ্টায় ১১ সহস্রাধিক আবেদন</a>
-                    <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">চলতি বছর সরকারি-বেসরকারি ডেন্টাল কলেজে
+                    <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">চলতি বছর সরকারি-বেসরকারি ডেন্টাল কলেজে
                         গত
                         ৪৮ ঘণ্টার কম সময়ে ১১ হাজারেরও বেশি ভর্তিচ্ছুর আবেদন<a href="#"
                             class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
@@ -923,7 +937,7 @@
 
                 <div>
                     <div v-for="i in 4" :key="i"
-                        class="flex text-lg font-medium border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
+                        class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                         <img src="../../../public/uploads/post/medical-20171106113824-600x337.jpg"
                             class="w-[120px] h-auto cursor-pointer flex-shrink-0">
@@ -931,7 +945,7 @@
                         <div class="flex-1 overflow-hidden">
 
                             <a href="#"
-                                class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
+                                class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600 leading-tight">
                                 সোহরাওয়ার্দীতে দুই সপ্তাহ ঝুঁকিপূর্ণ অস্ত্রোপচার বন্ধ
                             </a>
 
@@ -962,21 +976,20 @@
                 </div>
                 <div class="w-full p-2">
                     <a href="#"
-                        class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">রুদ্র
+                        class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">রুদ্র
                         মুহম্মদ শহিদুল্লাহর জন্মদিন আজ</a>
-                    <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">প্রেম ও দ্রোহের কবি রুদ্র মুহম্মদ
+                    <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">প্রেম ও দ্রোহের কবি রুদ্র মুহম্মদ
                         শহিদুল্লাহর আজ ৬১তম জন্মবার্ষিকী। ১৯৫৬ সালের আজকের এই দিনে<a href="#"
                             class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                 </div>
 
                 <div>
-                    <div v-for="i in 4" :key="i"
-                        class="flex text-lg font-medium border-b-1 border-[#bec9d2] gap-3 py-2">
+                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
                         <img src="../../../public/uploads/post/shamsur-rahman-20171023093303-600x337.jpg"
                             class="w-[120px] h-auto cursor-pointer">
                         <div class="flex-1 overflow-hidden">
                             <a
-                                class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">কবি
+                                class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">কবি
                                 শামসুর রাহমানের
                                 ৮৯তম জন্মদিন আজ</a>
                         </div>
@@ -1005,22 +1018,21 @@
                 </div>
                 <div class="w-full p-2">
                     <a href="#"
-                        class="text-xl md:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">বাল্যবিবাহ
+                        class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">বাল্যবিবাহ
                         রোধ করতে হবে সম্মিলিতভাবে</a>
-                    <p class="text-sm md:text-base text-[#333] pt-2 line-clamp-3">বরগুনার পাথরঘাটা উপজেলায় বাল্যবিবাহের
+                    <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">বরগুনার পাথরঘাটা উপজেলায় বাল্যবিবাহের
                         কারণে
                         ৪৫ জন ছাত্রীর চলমান জুনিয়র স্কুল সার্টিফিকেট (জেএসসি) ও জুনিয়র<a href="#"
                             class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
                 </div>
 
                 <div>
-                    <div v-for="i in 4" :key="i"
-                        class="flex text-lg font-medium border-b-1 border-[#bec9d2] gap-3 py-2">
+                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
                         <img src="../../../public/uploads/post/932961cdc0156bbdbc087c6c007db9ab-5a06f4e477b0f-600x337.jpg"
                             class="w-[120px] h-auto cursor-pointer">
                         <div class="flex-1 overflow-hidden">
                             <a
-                                class="display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">দুর্বৃত্তদের
+                                class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">দুর্বৃত্তদের
                                 ধরুন,
                                 ক্ষতিগ্রস্তদের পাশে দাঁড়ান</a>
                         </div>
