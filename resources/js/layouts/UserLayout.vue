@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-[#f2f2f2] min-h-screen">
-        <div class="w-full max-w-7xl mx-auto bg-white shadow-xl min-h-screen px-4">
+    <div class="container mx-auto">
+        <div class="bg-white shadow-xl px-4 min-h-screen">
 
             <Navbar />
 

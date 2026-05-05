@@ -894,7 +894,7 @@
         </div>
 
         <!-- সাইডবার -->
-        <div class="hidden md:block flex-1">
+        <div class="overflow-hidden hidden md:block flex-1">
             <div class="mb-7">
                 <div class="flex items-center bg-[#f7f7f7] text-[#333] text-lg border-l-5 border-[#f00f00] p-2 mb-2">
                     <h4>ফেসবুকে আমরা...</h4>
