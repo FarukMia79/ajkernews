@@ -705,6 +705,11 @@
                 </swiper>
             </div>
 
+            <!--বিজ্ঞাপন-->
+            <div class="w-full mb-7">
+                <img class="w-full h-auto" src="../../../public/uploads/biggapon/biggapon-1.gif">
+            </div>
+
             <!--ভিডিও গ্যালারি-->
             <div class="mb-7">
                 <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
@@ -1044,6 +1049,225 @@
                     </div>
 
                 </div>
+            </div>
+
+            <!-- শিক্ষা ক্যাটাগরি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>শিক্ষা
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                <div class="w-full h-full overflow-hidden">
+                    <img src="../../../public/uploads/post/dental-20171111125138.jpg"
+                        class="transition-transform duration-600 group-hover:scale-120">
+                </div>
+                <div class="w-full p-2">
+                    <a href="#"
+                        class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">শনিবার
+                        না হলে রোববার ডেন্টালের ভর্তি পরীক্ষার ফল</a>
+                    <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">সরকারি ও বেসরকারি ডেন্টাল কলেজে
+                        ব্যাচেলর অব ডেন্টাল সার্জন (বিডিএস) প্রথম বর্ষে ভর্তি পরীক্ষার ফলাফল<a href="#"
+                            class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                </div>
+
+                <div>
+                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                        <img src="../../../public/uploads/post/english-20171114215927.jpg"
+                            class="w-[120px] h-auto cursor-pointer">
+                        <div class="flex-1 overflow-hidden">
+                            <a
+                                class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">দুর্বৃত্তদের
+                                সরকারের নিয়ন্ত্রণে এলো ইংলিশ মিডিয়াম স্কুল</a>
+                        </div>
+
+                    </div>
+                    <div class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                        <span class="text-base cursor-pointer">আরো খবর..</span>
+                        <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- লাইফস্টাইল ক্যাটাগরি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>লাইফস্টাইল
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                <div class="w-full h-full overflow-hidden">
+                    <img src="../../../public/uploads/post/weight-loss-20171115083550-600x337.jpg"
+                        class="transition-transform duration-600 group-hover:scale-120">
+                </div>
+                <div class="w-full p-2">
+                    <a href="#"
+                        class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">এই
+                        ছয় পানীয় আপনাকে ওজন কমাতে সাহায্য করবে</a>
+                    <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">অফিসের ডেস্কে দীর্ঘসময় বসে থেকে কাজ
+                        করার জন্য মুটিয়ে গেছেন? বার্গার, পিজার মত ফাস্টফুড প্রিয়<a href="#"
+                            class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                </div>
+
+                <div>
+                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                        <img src="../../../public/uploads/post/lover-large-20171116115210-600x337.jpg"
+                            class="w-[120px] h-auto cursor-pointer">
+                        <div class="flex-1 overflow-hidden">
+                            <a
+                                class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">স্বামী
+                                হিসেবে কেমন হবেন আপনার প্রেমিক?</a>
+                        </div>
+
+                    </div>
+                    <div class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                        <span class="text-base cursor-pointer">আরো খবর..</span>
+                        <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- চাকরী ক্যাটাগরি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>চাকরী
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                <div class="w-full h-full overflow-hidden">
+                    <img src="../../../public/uploads/post/navy-jobs-20171010150252-600x337.jpg"
+                        class="transition-transform duration-600 group-hover:scale-120">
+                </div>
+                <div class="w-full p-2">
+                    <a href="#"
+                        class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">নৌবাহিনীতে
+                        সাব লেফটেন্যান্ট পদে চাকরি</a>
+                    <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">বাংলাদেশ নৌবাহিনীর কমিশন্ড অফিসার ২০১৮
+                        এ ডিইও ব্যাচে ইঞ্জিনিয়ার হিসেবে ‘অ্যাক্টিং ইনস্ট্রাক্টর সাব লেফটেন্যান্ট’ পদে<a href="#"
+                            class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                </div>
+
+                <div>
+                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                        <img src="../../../public/uploads/post/rajshahi-railway-20171017152023.jpg"
+                            class="w-[120px] h-auto cursor-pointer">
+                        <div class="flex-1 overflow-hidden">
+                            <a
+                                class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">রেলওয়ে
+                                পশ্চিমাঞ্চলে ১৭৭ জনের চাকরি</a>
+                        </div>
+
+                    </div>
+                    <div class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                        <span class="text-base cursor-pointer">আরো খবর..</span>
+                        <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- মতামত ক্যাটাগরি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>মতামত
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                <div class="w-full h-full overflow-hidden">
+                    <img src="../../../public/uploads/post/nasa-2-20171117113904-600x337.jpg"
+                        class="transition-transform duration-600 group-hover:scale-120">
+                </div>
+                <div class="w-full p-2">
+                    <a href="#"
+                        class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">উপগ্রহের
+                        স্বপ্ন</a>
+                    <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">জেফ আমার অফিসে এলে আমার অফিসের
+                        সহকারীরা সজাগ হয়ে যায়। ও একজন নভোবিজ্ঞানী সে কারণে নয়। তাদের সজাগ<a href="#"
+                            class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                </div>
+
+                <div>
+                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                        <img src="../../../public/uploads/post/shanta-20171114100258-600x337.jpg"
+                            class="w-[120px] h-auto cursor-pointer">
+                        <div class="flex-1 overflow-hidden">
+                            <a
+                                class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">ধানের
+                                কাব্যের কবি</a>
+                        </div>
+
+                    </div>
+                    <div class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                        <span class="text-base cursor-pointer">আরো খবর..</span>
+                        <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ক্যাম্পাস ক্যাটাগরি-->
+            <div class="flex w-full items-center text-xl border-b-2 border-[#f00f00] mb-2">
+                <div class="text-white bg-[#f00f00] whitespace-nowrap p-2">
+                    <a>
+                        <i class="fa-solid fa-bars pr-2"></i>ক্যাম্পাস
+                    </a>
+                </div>
+                <div class="flex-1 text-[#d6effe] bg-[#d6effe] py-2">.</div>
+            </div>
+            <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
+                <div class="w-full h-full overflow-hidden">
+                    <img src="../../../public/uploads/post/rajj-20171108205031.jpg"
+                        class="transition-transform duration-600 group-hover:scale-120">
+                </div>
+                <div class="w-full p-2">
+                    <a href="#"
+                        class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] inline">রাবির
+                        ‘অপহৃত’ ছাত্রীকে ঢাকায় উদ্ধার</a>
+                    <p class="text-sm lg:text-base text-[#333] pt-2 line-clamp-3">রাজশাহী বিশ্ববিদ্যালয়ের আবাসিক হলের
+                        সামনে থেকে অপহৃত বাংলা বিভাগের শিক্ষার্থীকে ঢাকায় উদ্ধার করা হয়েছে। শনিবার<a href="#"
+                            class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a></p>
+                </div>
+
+                <div>
+                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                        <img src="../../../public/uploads/post/ssbuilding-20171119174437-600x337.jpg"
+                            class="w-[120px] h-auto cursor-pointer">
+                        <div class="flex-1 overflow-hidden">
+                            <a
+                                class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">ঢাবি
+                                সামাজিক বিজ্ঞান ভবনে ছাত্রীদের কমনরুম উদ্বোধন</a>
+                        </div>
+
+                    </div>
+                    <div class="flex justify-end items-center transition-colors duration-600 hover:text-red-600 p-3">
+                        <span class="text-base cursor-pointer">আরো খবর..</span>
+                        <i class="fa fa-angle-double-right text-sm cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!--বিজ্ঞাপন-->
+            <div class="w-full mb-7">
+                <img class="w-full h-auto" src="../../../public/uploads/biggapon/ad250-250_ittfw0.gif">
+            </div>
+            <!--বিজ্ঞাপন-->
+            <div class="w-full mb-7">
+                <img class="w-full h-auto" src="../../../public/uploads/biggapon/ad250-250_ittfw0.gif">
             </div>
 
         </div>
