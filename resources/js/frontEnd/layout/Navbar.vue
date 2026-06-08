@@ -23,7 +23,9 @@
         </div>
         <div class="flex flex-col md:flex-row justify-between py-6 items-center gap-6 md:gap-10">
             <div class="w-full md:w-1/3 cursor-pointer">
-                <img src="../../../../public/uploads/logo/logo.png" class="mx-auto md:mx-0">
+                <router-link :to="{ name: 'home' }">
+                    <img src="../../../../public/uploads/logo/logo.png" class="mx-auto md:mx-0">
+                </router-link>
             </div>
             <div class="w-full md:w-2/3 hidden md:block">
                 <img src="../../../../public/uploads/bannar/bannar.jpeg" class="w-full">

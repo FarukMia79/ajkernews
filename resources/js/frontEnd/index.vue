@@ -34,17 +34,17 @@
             </button>
         </div>
         <div class="w-full md:w-1/2 flex flex-col md:flex-row gap-7">
-            <div class="w-full md:w-1/2 md:h-[310px] lg:h-[355px] overflow-hidden flex flex-col bg-white">
+            <div class="w-full md:w-1/2 md:h-77.5 lg:h-95 xl:h-96.25 2xl:h-105 overflow-hidden flex flex-col bg-white">
                 <div class="flex text-sm md:text-base lg:text-lg font-bold">
-                    <button class="w-1/2 bg-[#f0f0f0] py-2border-t-3 border-[#7719aa] cursor-pointer">
+                    <button class="w-1/2 bg-[#f0f0f0] py-2 border-t-3 border-[#7719aa] cursor-pointer">
                         সর্বশেষ সংবাদ
                     </button>
                     <button class="w-1/2 bg-[#d2d5db] py-2 text-gray-600 cursor-pointer">
                         জনপ্রিয় সংবাদ
                     </button>
                 </div>
-                <div class=" overflow-y-auto border-x-1 border-b-1 border-[#bec9d2] px-1">
-                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                <div class=" overflow-y-auto border-x border-b border-[#bec9d2] px-1">
+                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
                             <a href="#"
@@ -57,7 +57,7 @@
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
                             <a href="#"
@@ -67,7 +67,7 @@
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
                             <a href="#"
@@ -77,7 +77,7 @@
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
                             <a href="#"
@@ -87,7 +87,7 @@
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
                             <a href="#"
@@ -98,7 +98,7 @@
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
                             <a href="#"
@@ -108,7 +108,7 @@
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
                             <a href="#"
@@ -118,7 +118,7 @@
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
                             <a href="#"
@@ -130,7 +130,7 @@
                         </div>
 
                     </div>
-                    <div class="border-b-1 border-[#bec9d2] py-1 flex items-start gap-2">
+                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
                         <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
                         <div class="flex-1 overflow-hidden">
                             <a href="#"
@@ -161,9 +161,9 @@
                         class="text-lg md:text-xl lg:text-2xl font-medium transition-colors duration-600 hover:text-[#337ab7] pb-2">
                         কর দিয়ে দেশের উন্নয়নের একজন
                         অংশীদার আমি</h2>
-                    <p class="text-sm lg:text-base text-[#333] line-clamp-4">‘সরকার দেশের যে উন্নয়ন করছে, আমি প্রতিবছর
-                        আয়কর দিয়ে দেশের সেই
-                        উন্নয়নের একজন
+                    <p class="text-sm lg:text-base text-[#333] line-clamp-4">সরকার দেশের যে উন্নয়ন করছে, আমি প্রতিবছর
+                        আয়কর দিয়ে দেশের সেই উন্নয়নের একজন গর্বিত অংশীদার। এজন্য আমি গর্ববোধ করছি। আমি ২৭ বছর ধরে আয়কর
+                        দিচ্ছি। শুধু আমিই না, আমার পরিবারের সদস্যরাও আয়কর দেন। আমার স্ত্রী ৩২ বছর ধরে আয়কর দিচ্ছেন।
                     </p><a href="#" class="text-[#337ab7] hover:text-[#f00] cursor-pointer pl-1">বিস্তারিত...</a>
                 </div>
             </div>
@@ -194,8 +194,8 @@
             </div>
             <div class="w-full mb-7">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-7 w-full">
-                    <div v-for="i in 8" :key="i" class="flex border-b-1 border-[#bec9d2] py-2 gap-3">
-                        <img class="w-[170px] md:w-[130px] h-auto cursor-pointer"
+                    <div v-for="i in 8" :key="i" class="flex border-b border-[#bec9d2] py-2 gap-3">
+                        <img class="w-42.5 md:w-32.5 h-auto cursor-pointer"
                             src="../../../public/uploads/post/parlament-sm-20171120165706.jpg">
                         <div class="flex-1 overflow-hidden pr-2">
                             <a href="#"
@@ -257,8 +257,10 @@
                     </div>
                     <div class="w-full group overflow-hidden shadow-lg/5 mb-7">
                         <div class="w-full h-full overflow-hidden">
-                            <img src="../../../public/uploads/post/bnp-20171120133207.jpg"
-                                class="w-full transition-transform duration-600 group-hover:scale-120">
+                            <router-link :to="{ name: 'newsDetails' }">
+                                <img src="../../../public/uploads/post/bnp-20171120133207.jpg"
+                                    class="w-full transition-transform duration-600 group-hover:scale-120">
+                            </router-link>
                         </div>
                         <div class="w-full p-2">
                             <a href="#"
@@ -274,7 +276,7 @@
                                 class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/tarek-20171119104531-600x337.jpg"
-                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+                                    class="w-30 h-auto cursor-pointer shrink-0">
 
                                 <div class="flex-1 overflow-hidden pr-2">
 
@@ -326,7 +328,7 @@
                                 class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/hsbc-20171118034650.jpg"
-                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+                                    class="w-30 h-auto cursor-pointer shrink-0">
 
                                 <div class="flex-1 overflow-hidden pr-2">
 
@@ -382,7 +384,7 @@
                                 class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/nurse-20171117193636.jpg"
-                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+                                    class="w-30 h-auto cursor-pointer shrink-0">
 
                                 <div class="flex-1 overflow-hidden pr-2">
 
@@ -435,7 +437,7 @@
                                 class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/robot-1-20171115175624-600x337.jpg"
-                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+                                    class="w-30 h-auto cursor-pointer shrink-0">
 
                                 <div class="flex-1 overflow-hidden pr-2">
 
@@ -549,7 +551,7 @@
                                 class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/ronaldo-1-20171119092537-600x337.jpg"
-                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+                                    class="w-30 h-auto cursor-pointer shrink-0">
 
                                 <div class="flex-1 overflow-hidden pr-2">
 
@@ -601,7 +603,7 @@
                                 class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/Amal-Top20151111104347-600x337.jpg"
-                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+                                    class="w-30 h-auto cursor-pointer shrink-0">
 
                                 <div class="flex-1 overflow-hidden pr-2">
 
@@ -767,7 +769,7 @@
                                 class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/kuwait-e-psc-exam-hall-phot-20171120082347-600x337.jpg"
-                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+                                    class="w-30 h-auto cursor-pointer shrink-0">
 
                                 <div class="flex-1 overflow-hidden pr-2">
 
@@ -819,7 +821,7 @@
                                 class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                                 <img src="../../../public/uploads/post/colour-cover-20170917124421-600x337.jpg"
-                                    class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+                                    class="w-30 h-auto cursor-pointer shrink-0">
 
                                 <div class="flex-1 overflow-hidden pr-2">
 
@@ -945,7 +947,7 @@
                         class="flex border-b border-[#bec9d2] gap-3 py-2 items-start cursor-default">
 
                         <img src="../../../public/uploads/post/medical-20171106113824-600x337.jpg"
-                            class="w-[120px] h-auto cursor-pointer flex-shrink-0">
+                            class="w-30 h-auto cursor-pointer shrink-0">
 
                         <div class="flex-1 overflow-hidden">
 
@@ -989,9 +991,9 @@
                 </div>
 
                 <div>
-                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                    <div v-for="i in 4" :key="i" class="flex border-b border-[#bec9d2] gap-3 py-2">
                         <img src="../../../public/uploads/post/shamsur-rahman-20171023093303-600x337.jpg"
-                            class="w-[120px] h-auto cursor-pointer">
+                            class="w-30 h-auto cursor-pointer">
                         <div class="flex-1 overflow-hidden">
                             <a
                                 class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">কবি
@@ -1032,9 +1034,9 @@
                 </div>
 
                 <div>
-                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                    <div v-for="i in 4" :key="i" class="flex border-b border-[#bec9d2] gap-3 py-2">
                         <img src="../../../public/uploads/post/932961cdc0156bbdbc087c6c007db9ab-5a06f4e477b0f-600x337.jpg"
-                            class="w-[120px] h-auto cursor-pointer">
+                            class="w-30 h-auto cursor-pointer">
                         <div class="flex-1 overflow-hidden">
                             <a
                                 class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">দুর্বৃত্তদের
@@ -1075,9 +1077,9 @@
                 </div>
 
                 <div>
-                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                    <div v-for="i in 4" :key="i" class="flex border-b border-[#bec9d2] gap-3 py-2">
                         <img src="../../../public/uploads/post/english-20171114215927.jpg"
-                            class="w-[120px] h-auto cursor-pointer">
+                            class="w-30 h-auto cursor-pointer">
                         <div class="flex-1 overflow-hidden">
                             <a
                                 class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">দুর্বৃত্তদের
@@ -1118,9 +1120,9 @@
                 </div>
 
                 <div>
-                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                    <div v-for="i in 4" :key="i" class="flex border-b border-[#bec9d2] gap-3 py-2">
                         <img src="../../../public/uploads/post/lover-large-20171116115210-600x337.jpg"
-                            class="w-[120px] h-auto cursor-pointer">
+                            class="w-30 h-auto cursor-pointer">
                         <div class="flex-1 overflow-hidden">
                             <a
                                 class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">স্বামী
@@ -1160,9 +1162,9 @@
                 </div>
 
                 <div>
-                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                    <div v-for="i in 4" :key="i" class="flex border-b border-[#bec9d2] gap-3 py-2">
                         <img src="../../../public/uploads/post/rajshahi-railway-20171017152023.jpg"
-                            class="w-[120px] h-auto cursor-pointer">
+                            class="w-30 h-auto cursor-pointer">
                         <div class="flex-1 overflow-hidden">
                             <a
                                 class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">রেলওয়ে
@@ -1202,9 +1204,9 @@
                 </div>
 
                 <div>
-                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                    <div v-for="i in 4" :key="i" class="flex border-b border-[#bec9d2] gap-3 py-2">
                         <img src="../../../public/uploads/post/shanta-20171114100258-600x337.jpg"
-                            class="w-[120px] h-auto cursor-pointer">
+                            class="w-30 h-auto cursor-pointer">
                         <div class="flex-1 overflow-hidden">
                             <a
                                 class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">ধানের
@@ -1244,9 +1246,9 @@
                 </div>
 
                 <div>
-                    <div v-for="i in 4" :key="i" class="flex border-b-1 border-[#bec9d2] gap-3 py-2">
+                    <div v-for="i in 4" :key="i" class="flex border-b border-[#bec9d2] gap-3 py-2">
                         <img src="../../../public/uploads/post/ssbuilding-20171119174437-600x337.jpg"
-                            class="w-[120px] h-auto cursor-pointer">
+                            class="w-30 h-auto cursor-pointer">
                         <div class="flex-1 overflow-hidden">
                             <a
                                 class="text-base lg:text-lg font-medium display-table w-fit cursor-pointer transition-colors duration-600 hover:text-red-600">ঢাবি
