@@ -1,18 +1,18 @@
 <template>
     <div class="flex flex-col md:flex-row w-full gap-7">
         <div class="w-full md:w-2/3 mb-7">
-            <!-- রাজনীতি -->
-            <div class="flex w-full justify-center items-center border-b-2 border-[#f00f00] text-lg">
+            <!-- ক্যাটাগরি -->
+            <div class="flex w-full justify-center items-center border-b-2 border-[#b30e0e] text-lg">
                 <div
-                    class="flex justify-center items-center whitespace-nowrap cursor-pointer bg-[#f00f00] text-white py-1 px-2">
+                    class="flex justify-center items-center whitespace-nowrap cursor-pointer bg-[#b30e0e] hover:bg-[#971818] text-white py-1 px-2">
                     <a>
-                        <i class="fa-solid fa-house"></i>প্রচ্ছদ
+                        <i class="fa-solid fa-house pr-2"></i>প্রচ্ছদ
                     </a>
                 </div>
                 <div
                     class="flex justify-center items-center whitespace-nowrap cursor-pointer bg-[#666666] text-white py-1 px-2">
                     <a>
-                        <i class="fa-solid fa-bars"></i>রাজনীতি
+                        <i class="fa-solid fa-bars pr-2"></i>রাজনীতি
                     </a>
                 </div>
                 <div class="flex-1 bg-[#d6effe] text-[#d6effe] py-1">
@@ -32,7 +32,7 @@
                             alt="reporter">
                     </div>
                     <div class="ml-5 flex-1 w-full">
-                        <span class="text-sm md:text-base lg:text-lg text-gray-600">রিপোর্টার: জন ডো</span>
+                        <span class="text-sm md:text-base lg:text-lg text-gray-600">রিপোর্টার: ফারুক</span>
                         <div
                             class="flex items-center gap-3 border-t border-[#bec9d2] text-sm md:text-base lg:text-lg text-gray-600 mb-5">
                             <span>প্রকাশিত: ০১ জুন ২০২৪, ১০:০০ পূর্বাহ্ন</span>
@@ -126,7 +126,8 @@
                     <div v-for="i in 6" :key="i" class="relative">
                         <img src="../../../../public/uploads/post/tarek-20171119104531-600x337.jpg"
                             class="w-full object-cover" alt="News">
-                        <div class="absolute bottom-0 left-0 w-full bg-black/40 text-white px-6 md:px-2 py-2 md:py-1 lg:py-2 ">
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-black/40 text-white px-6 md:px-2 py-2 md:py-1 lg:py-2 ">
                             <h2 class="text-lg md:text-sm lg:text-lg font-medium leading-tight">তারেকের জন্মদিনে কেক
                                 কাটবেন খালেদা</h2>
                         </div>
@@ -134,6 +135,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- সাইডবার -->
         <div class="flex-1">
             <div
                 class="w-full sm:h-77.5 md:h-77.5 lg:h-95 xl:h-96.25 2xl:h-105 mb-4 overflow-hidden flex flex-col bg-white">

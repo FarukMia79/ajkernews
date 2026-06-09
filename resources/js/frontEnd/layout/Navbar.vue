@@ -88,7 +88,8 @@
                             রংপুর বিভাগ</li>
                     </ul>
                 </li>
-                <li class="text-white hover:bg-[#971818] border-r border-[#971818] py-2 px-4">আন্তর্জাতিক</li>
+                <li class="text-white hover:bg-[#971818] border-r border-[#971818] py-2 px-4"><router-link
+                        :to="{ name: 'newsCategory' }">আন্তর্জাতিক</router-link></li>
                 <li class="text-white hover:bg-[#971818] border-r border-[#971818] py-2 px-4">রাজনীতি</li>
                 <li class="text-white hover:bg-[#971818] border-r border-[#971818] py-2 px-4">অর্থনীতি</li>
                 <li class="text-white hover:bg-[#971818] border-r border-[#971818] py-2 px-4">শিক্ষা</li>
