@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col md:flex-row w-full gap-7">
-        <div class="w-full md:w-2/3">
+        <div class="w-full md:w-2/3 mb-7">
             <!-- রাজনীতি -->
             <div class="flex w-full justify-center items-center border-b-2 border-[#f00f00] text-lg">
                 <div
@@ -20,6 +20,8 @@
                 </div>
             </div>
 
+
+            <!-- সংবাদ বিস্তারিত -->
             <div>
                 <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold mt-5 mb-3">
                     প্রধানমন্ত্রী পদত্যাগ করলে জনগণও তাকে ক্ষমা করে দেবে
@@ -64,11 +66,14 @@
                 <img class="w-full h-auto" src="../../../../public/uploads/biggapon/biggapon-1.gif">
             </div>
 
+            <!-- শেয়ার -->
             <div class="border-b border-[#bec9d2] mb-4">
                 <h2 class="text-lg md:text-xl lg:text-2xl font-bold mt-5 mb-2">
                     নিউজটি শেয়ার করুন..
                 </h2>
             </div>
+
+            <!-- শেয়ার বাটন -->
             <div class="flex gap-4 mb-7">
                 <button
                     class="flex items-center gap-2 bg-[#3b5998] text-white py-2 px-4 rounded hover:bg-white hover:text-[#3b5998] hover:border hover:border-[#3b5998] transition-colors duration-300">
@@ -86,6 +91,47 @@
                     class="flex items-center gap-2 bg-[#e4405f] text-white py-2 px-4 rounded hover:bg-white hover:text-[#e4405f] hover:border hover:border-[#e4405f] transition-colors duration-300">
                     <i class="fa-brands fa-instagram"></i> Instagram
                 </button>
+            </div>
+
+            <!-- comments form -->
+            <div class="w-full h-auto shadow-lg p-10 mb-7">
+                <h2 class="text-lg md:text-xl lg:text-2xl font-bold mb-4">
+                    মন্তব্য করুন..
+                </h2>
+                <form class="flex flex-col gap-4">
+                    <textarea
+                        class="w-full h-24 p-2 border border-[#bec9d2] focus:outline-none focus:ring-1 focus:ring-[#1879d0] rounded"
+                        placeholder="আপনার মন্তব্য লিখুন..."></textarea>
+                    <input
+                        class="w-full p-2 border border-[#bec9d2] focus:outline-none focus:ring-1 focus:ring-[#1879d0] rounded"
+                        type="text" placeholder="আপনার নাম">
+                    <input
+                        class="w-full p-2 border border-[#bec9d2] focus:outline-none focus:ring-1 focus:ring-[#1879d0] rounded"
+                        type="email" placeholder="আপনার ইমেইল">
+                    <button
+                        class="self-end bg-[#007bff] text-white py-2 px-4 rounded hover:bg-[#0056b3] transition-colors duration-300">
+                        মন্তব্য করুন
+                    </button>
+                </form>
+            </div>
+
+            <!-- এ জাতীয় আরো খবর-->
+            <div>
+                <h2 class="text-base lg:text-lg text-white bg-[#4962A4] font-bold py-1 px-2 mt-5 mb-3">
+                    এ জাতীয় আরো খবর..
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- খবর -->
+                    <div v-for="i in 6" :key="i" class="relative">
+                        <img src="../../../../public/uploads/post/tarek-20171119104531-600x337.jpg"
+                            class="w-full object-cover" alt="News">
+                        <div class="absolute bottom-0 left-0 w-full bg-black/40 text-white px-6 md:px-2 py-2 md:py-1 lg:py-2 ">
+                            <h2 class="text-lg md:text-sm lg:text-lg font-medium leading-tight">তারেকের জন্মদিনে কেক
+                                কাটবেন খালেদা</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="flex-1">
