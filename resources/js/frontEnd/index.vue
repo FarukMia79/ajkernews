@@ -36,118 +36,37 @@
         <div class="w-full md:w-1/2 flex flex-col md:flex-row gap-7">
             <div class="w-full md:w-1/2 md:h-77.5 lg:h-95 xl:h-96.25 2xl:h-105 overflow-hidden flex flex-col bg-white">
                 <div class="flex text-sm md:text-base lg:text-lg font-bold">
-                    <button class="w-1/2 bg-[#f0f0f0] py-2 border-t-3 border-[#7719aa] cursor-pointer">
+                    <button @click="activeTab = 'latest'" :aria-selected="activeTab === 'latest'"
+                        class="w-1/2 aria-selected:border-t-3 aria-selected:border-[#7719aa] aria-selected:bg-[#f0f0f0] bg-[#d2d5db] py-1 aria-selected:text-black text-gray-600 cursor-pointer">
                         সর্বশেষ সংবাদ
                     </button>
-                    <button class="w-1/2 bg-[#d2d5db] py-2 text-gray-600 cursor-pointer">
-                        জনপ্রিয় সংবাদ
+                    <button @click="activeTab = 'popular'" :aria-selected="activeTab === 'popular'"
+                        class="w-1/2 aria-selected:border-t-3 aria-selected:border-[#7719aa] aria-selected:bg-[#f0f0f0] bg-[#d2d5db] py-1 aria-selected:text-black text-gray-600 cursor-pointer">
+                        জনপ্রিয় সংবাদ
                     </button>
                 </div>
                 <div class=" overflow-y-auto border-x border-b border-[#bec9d2] px-1">
-                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
-                        <div class="flex-1 overflow-hidden">
-                            <a href="#"
-                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">প্রথম
-                                প্রহরে
-                                নয়, সিলেটে বিজয়
-                                দিবসের
-                                অনুষ্ঠান
-                                ভোরে</a>
+                    <div v-if="activeTab === 'latest'">
+                        <div v-for="i in 8" :key="i" class="flex border-b border-[#bec9d2] py-2 gap-3">
+                            <img class="w-42.5 md:w-15.5 lg:w-20.5 xl:w-32.5 h-auto cursor-pointer"
+                                src="../../../../public/uploads/post/parlament-sm-20171120165706.jpg" alt="news">
+                            <div class="flex-1 overflow-hidden pr-2">
+                                <a href="#"
+                                    class="text-base md:text-base lg:text-lg font-medium display-table w-fit cursor-pointer hover:text-red-600 transition-colors duration-600">সরকারি
+                                    অফিসে ৩ লাখ ৬০ হাজার পদ শূন্য</a>
+                            </div>
                         </div>
-
                     </div>
-                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
-                        <div class="flex-1 overflow-hidden">
-                            <a href="#"
-                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">সিলেটে
-                                সড়ক
-                                দুর্ঘটনায় যুবক নিহত</a>
+                    <div v-if="activeTab === 'popular'">
+                        <div v-for="i in 8" :key="i" class="flex border-b border-[#bec9d2] py-2 gap-3">
+                            <img class="w-42.5 md:w-15.5 lg:w-20.5 xl:w-32.5 h-auto cursor-pointer"
+                                src="../../../../public/uploads/post/uk-car-20171119145426-600x337.jpg" alt="news">
+                            <div class="flex-1 overflow-hidden pr-2">
+                                <a href="#"
+                                    class="text-base md:text-base lg:text-lg font-medium display-table w-fit cursor-pointer hover:text-red-600 transition-colors duration-600">২০২৭
+                                    সালের মধ্যে চালকবিহীন গাড়ি আনছে নেপাল</a>
+                            </div>
                         </div>
-
-                    </div>
-                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
-                        <div class="flex-1 overflow-hidden">
-                            <a href="#"
-                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">রাজশাহীতে
-                                ১৫টি স্বর্ণের বারসহ যুবক
-                                গ্রেফতার</a>
-                        </div>
-
-                    </div>
-                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
-                        <div class="flex-1 overflow-hidden">
-                            <a href="#"
-                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">রাজশাহীতে
-                                ট্রাকবোঝায় ওএমএসের চাল
-                                উদ্ধার</a>
-                        </div>
-
-                    </div>
-                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
-                        <div class="flex-1 overflow-hidden">
-                            <a href="#"
-                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">রংপুরে
-                                পুলিশের সঙ্গে ‘বন্দুকযুদ্ধে’
-                                চরমপন্থী
-                                নিহত</a>
-                        </div>
-
-                    </div>
-                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
-                        <div class="flex-1 overflow-hidden">
-                            <a href="#"
-                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">রংপুরে
-                                পার্টিকেল বোর্ড কারখানায়
-                                আগুন</a>
-                        </div>
-
-                    </div>
-                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
-                        <div class="flex-1 overflow-hidden">
-                            <a href="#"
-                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">ময়মনসিংহে
-                                প্রতিদিন ১৫টি বিবাহ
-                                বিচ্ছেদ</a>
-                        </div>
-
-                    </div>
-                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
-                        <div class="flex-1 overflow-hidden">
-                            <a href="#"
-                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">৩
-                                ঘণ্টা পর
-                                ঢাকা-ময়মনসিংহে ট্রেন চলাচল
-                                শুরু
-                            </a>
-                        </div>
-
-                    </div>
-                    <div class="border-b border-[#bec9d2] py-1 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
-                        <div class="flex-1 overflow-hidden">
-                            <a href="#"
-                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">বরিশালে
-                                স্কুলছাত্র খুন</a>
-                        </div>
-
-                    </div>
-                    <div class="py-1 flex items-start gap-2">
-                        <i class="fa fa-angle-double-right text-xs text-[#f00] mt-1 lg:mt-2"></i>
-                        <div class="flex-1 overflow-hidden">
-                            <a href="#"
-                                class="display-table w-fit text-base md:text-base lg:text-lg font-medium  hover:text-[#f00]">বরিশালে
-                                অভিনব
-                                কৌশলে বিদ্যুৎ চুরি</a>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -1277,9 +1196,17 @@
 
 </template>
 
-<script setup>
+<script>
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-const modules = [Autoplay, Pagination, Navigation];
+
+export default {
+    data() {
+        return {
+            activeTab: 'latest',
+            modules: [Autoplay, Pagination, Navigation],
+        }
+    },
+};
 </script>
 
 <style scoped></style>
