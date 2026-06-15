@@ -111,11 +111,11 @@
                                         title="দেখুন">
                                         <i class="fa-solid fa-eye"></i>
                                     </button>
-                                    <button
+                                    <router-link :to="{ name: 'adminEditNews', params: { id: i } }"
                                         class="p-2 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition"
                                         title="এডিট">
                                         <i class="fa-solid fa-pen-to-square"></i>
-                                    </button>
+                                    </router-link>
                                     <button
                                         class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition"
                                         title="ডিলিট">
