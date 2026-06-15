@@ -17,12 +17,16 @@
                 class="flex items-center gap-3 p-3 rounded hover:bg-white/10 transition">
                 <i class="fa-solid fa-list w-5"></i> ক্যাটাগরি
             </router-link>
+            <router-link to="/admin/categories"
+                class="flex items-center gap-3 p-3 rounded hover:bg-white/10 transition">
+                <i class="fa-solid fa-list w-5"></i> সাব ক্যাটাগরি
+            </router-link>
             <router-link to="/admin/users" class="flex items-center gap-3 p-3 rounded hover:bg-white/10 transition">
                 <i class="fa-solid fa-users w-5"></i> ইউজার লিস্ট
             </router-link>
         </nav>
         <div class="p-4 border-t border-white/10">
-            <button class="w-full text-left p-3 text-red-400 hover:bg-red-500/10 rounded transition">
+            <button class="w-full text-left p-3 text-red-400 hover:bg-red-500/10 rounded transition cursor-pointer">
                 <i class="fa-solid fa-right-from-bracket mr-2"></i> লগআউট
             </button>
         </div>
