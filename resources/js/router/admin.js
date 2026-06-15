@@ -13,7 +13,8 @@ export default [
             { path: 'news/:id/edit', name: 'adminEditNews', component: () => import('../backEnd/page/newsManagement/NewsEdit.vue') },
             { path: 'categories', name: 'adminCategories', component: () => import('../backEnd/page/category/IndexCategory.vue') },
             { path: 'categories/create', name: 'adminCreateCategory', component: () => import('../backEnd/page/category/CreateCategory.vue') },
-            { path: 'categories/:id/edit', name: 'adminEditCategory', component: () => import('../backEnd/page/category/EditCategory.vue') }
+            { path: 'categories/:id/edit', name: 'adminEditCategory', component: () => import('../backEnd/page/category/EditCategory.vue') },
+            { path: 'users', name: 'adminUsers', component: () => import('../backEnd/page/user/UserIndex.vue') },
         ]
     }
 ]

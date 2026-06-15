@@ -134,4 +134,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+th {
+    letter-spacing: 0.025em;
+}
+</style>
