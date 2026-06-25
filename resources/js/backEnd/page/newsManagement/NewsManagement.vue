@@ -85,7 +85,7 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center gap-2">
                                     <img src="https://ui-avatars.com/api/?name=Faruk" class="w-6 h-6 rounded-full">
-                                    <span class="text-sm text-gray-600 font-medium">ফারুক আহমেদ</span>
+                                    <span class="text-sm text-gray-600 font-medium">ফারুক</span>
                                 </div>
                             </td>
                             <!-- তারিখ -->
@@ -106,11 +106,12 @@
                             <!-- অ্যাকশন বাটন -->
                             <td class="px-6 py-4 whitespace-nowrap text-right">
                                 <div class="flex justify-end gap-2">
-                                    <button
+                                    <router-link 
+                                        :to="{ name: 'adminShowNews', params: { id: i } }"
                                         class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition"
                                         title="দেখুন">
                                         <i class="fa-solid fa-eye"></i>
-                                    </button>
+                                    </router-link>
                                     <router-link :to="{ name: 'adminEditNews', params: { id: i } }"
                                         class="p-2 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition"
                                         title="এডিট">
