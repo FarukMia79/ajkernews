@@ -15,7 +15,17 @@ export default [
             { path: 'categories', name: 'adminCategories', component: () => import('../backEnd/page/category/IndexCategory.vue') },
             { path: 'categories/create', name: 'adminCreateCategory', component: () => import('../backEnd/page/category/CreateCategory.vue') },
             { path: 'categories/:id/edit', name: 'adminEditCategory', component: () => import('../backEnd/page/category/EditCategory.vue') },
+            { path: 'sub-categories', name: 'adminSubCategories', component: () => import('../backEnd/page/subCategory/SubCategoryIndex.vue') },
+            { path: 'sub-categories/create', name: 'adminCreateSubCategory', component: () => import('../backEnd/page/subCategory/SubCategoryCreate.vue') },
+            { path: 'sub-categories/:id/edit', name: 'adminEditSubCategory', component: () => import('../backEnd/page/subCategory/SubCategoryEdit.vue') },
+            { path: 'tags', name: 'adminTags', component: () => import('../backEnd/page/tags/TagsIndex.vue') },
+            { path: 'photo-gallery', name: 'adminPhotoGallery', component: () => import('../backEnd/page/gallery/photoGallery/PhotoGalleryIndex.vue') },
+            { path: 'photo-gallery/upload', name: 'adminPhotoUpload', component: () => import('../backEnd/page/gallery/photoGallery/PhotoUpload.vue') },
+            { path: 'video-gallery', name: 'adminVideoGallery', component: () => import('../backEnd/page/gallery/videoGallery/VideoCreate.vue') },
+            //{ path: 'video-gallery/create', name: 'adminVideoCreate', component: () => import('../backEnd/page/gallery/videoGallery/VideoCreate.vue') },
             { path: 'users', name: 'adminUsers', component: () => import('../backEnd/page/user/UserIndex.vue') },
+            { path: 'users/:id/edit', name: 'adminEditUser', component: () => import('../backEnd/page/user/UserEdit.vue') },
+            { path: 'users/:id/reset-password', name: 'adminResetPassword', component: () => import('../backEnd/auth/UserPasswordReset.vue') },
         ]
     }
 ]

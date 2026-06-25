@@ -90,16 +90,17 @@
                             <!-- অ্যাকশন বাটন -->
                             <td class="px-6 py-4 whitespace-nowrap text-right">
                                 <div class="flex justify-end gap-2">
-                                    <button
+                                    <router-link
+                                        :to="{ name: 'adminEditUser', params: { id: i } }"
                                         class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition"
                                         title="এডিট">
                                         <i class="fa-solid fa-user-pen"></i>
-                                    </button>
-                                    <button
+                                    </router-link>
+                                    <router-link :to="{ name: 'adminResetPassword', params: { id: i } }"
                                         class="p-2 text-gray-400 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition"
-                                        title="পাসওয়ার্ড রিসেট">
+                                        title="পাসওয়ার্ড রিসেট">
                                         <i class="fa-solid fa-key"></i>
-                                    </button>
+                                    </router-link>
                                     <button
                                         class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition"
                                         title="ডিলিট">
