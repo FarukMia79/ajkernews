@@ -28,9 +28,13 @@ export default [
             { path: 'advertisements', name: 'adminAdvertisements', component: () => import('../backEnd/page/ads/AdIndex.vue') },
             { path: 'advertisements/create', name: 'adminCreateAdvertisement', component: () => import('../backEnd/page/ads/AdCreate.vue') },
             { path: 'advertisements/:id/edit', name: 'adminEditAdvertisement', component: () => import('../backEnd/page/ads/AdEdit.vue') },
+            { path: 'polls', name: 'adminPolls', component: () => import('../backEnd/page/poll/PollIndex.vue') },
+            { path: 'polls/create', name: 'adminCreatePoll', component: () => import('../backEnd/page/poll/PollCreate.vue') },
+            { path: 'polls/:id/edit', name: 'adminEditPoll', component: () => import('../backEnd/page/poll/PollEdit.vue') },
             { path: 'users', name: 'adminUsers', component: () => import('../backEnd/page/user/UserIndex.vue') },
             { path: 'users/:id/edit', name: 'adminEditUser', component: () => import('../backEnd/page/user/UserEdit.vue') },
             { path: 'users/:id/reset-password', name: 'adminResetPassword', component: () => import('../backEnd/auth/UserPasswordReset.vue') },
+            { path: 'settings', name: 'adminSettings', component: () => import('../backEnd/page/generalSettings/SettingsIndex.vue') },
         ]
     }
 ]
