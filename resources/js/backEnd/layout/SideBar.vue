@@ -110,7 +110,7 @@
                 <i class="fa-solid fa-gears w-5 text-gray-400"></i> জেনারেল সেটিংস
             </router-link>
 
-            <router-link to="/admin/seo" 
+            <router-link to="/admin/settings/seo" 
                 class="flex items-center gap-3 p-3 rounded-xl transition-all duration-200 text-[14px] font-medium text-gray-300 hover:text-white hover:bg-white/10"
                 active-class="bg-blue-600/20 !text-white border-l-4 border-blue-500 !rounded-none !rounded-r-xl">
                 <i class="fa-solid fa-earth-americas w-5 text-green-300"></i> এসইও সেটিংস

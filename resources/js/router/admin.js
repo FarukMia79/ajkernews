@@ -34,7 +34,15 @@ export default [
             { path: 'users', name: 'adminUsers', component: () => import('../backEnd/page/user/UserIndex.vue') },
             { path: 'users/:id/edit', name: 'adminEditUser', component: () => import('../backEnd/page/user/UserEdit.vue') },
             { path: 'users/:id/reset-password', name: 'adminResetPassword', component: () => import('../backEnd/auth/UserPasswordReset.vue') },
-            { path: 'settings', name: 'adminSettings', component: () => import('../backEnd/page/generalSettings/SettingsIndex.vue') },
+            { path: 'settings', name: 'adminSettings', component: () => import('../backEnd/page/setting/generalSettings/SettingsIndex.vue') },
+            { path: 'settings/seo', name: 'adminSeoSettings', component: () => import('../backEnd/page/setting/seoSettings/SeoSettings.vue') },
         ]
+    },
+
+    {
+        path: '/admin/login',
+        name: 'adminLogin',
+        component: () => import('../backEnd/auth/AdminLogin.vue'),
     }
 ]
+
