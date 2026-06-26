@@ -12,13 +12,13 @@
                     <span class="text-blue-600 font-medium">ফটো গ্যালারি</span>
                 </nav>
             </div>
-            <!-- ইমেজ আপলোড বাটন (মোডাল বা ড্রপজোন ওপেন করবে) -->
+            <!-- ইমেজ আপলোড বাটন -->
             <router-link to="/admin/photo-gallery/upload" class="bg-[#003557] hover:bg-[#004a7c] text-white px-6 py-2.5 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-all flex items-center gap-2 transform active:scale-95">
                 <i class="fa-solid fa-cloud-arrow-up"></i> নতুন ছবি আপলোড
             </router-link>
         </div>
 
-        <!-- ২. ইমেজ আপলোড এরিয়া (প্লেসহোল্ডার) -->
+        <!-- ২. ইমেজ আপলোড এরিয়া -->
         <div class="mb-10 bg-white p-8 rounded-3xl border-2 border-dashed border-gray-200 text-center hover:border-blue-400 transition cursor-pointer group">
             <i class="fa-solid fa-file-image text-5xl text-gray-300 group-hover:text-blue-500 transition-all mb-4"></i>
             <h3 class="text-lg font-bold text-gray-700">এখানে ছবি ড্র্যাগ করে ছাড়ুন অথবা ক্লিক করুন</h3>
@@ -46,7 +46,7 @@
                     <img src="../../../../../../public/uploads/photo_gallery/u2019u2019u2019u2019u2019u2019u2019-84-600x337.jpg" 
                          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     
-                    <!-- ছবির ওপরে কুইক অ্যাকশন (হোভার করলে দেখা যাবে) -->
+                    <!-- ছবির ওপরে কুইক অ্যাকশন -->
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
                         <button class="p-2 bg-white text-gray-800 rounded-full hover:bg-blue-500 hover:text-white transition" title="বড় করে দেখুন">
                             <i class="fa-solid fa-maximize text-sm"></i>

@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- ক্যাটাগরি (ঐচ্ছিক) -->
+                        <!-- ক্যাটাগরি -->
                         <div class="flex flex-col gap-2 text-lg">
                             <label class="text-sm font-bold text-gray-700 ml-1">গ্যালারি অ্যালবাম</label>
                             <select
@@ -87,7 +87,7 @@
             </form>
         </div>
 
-        <!-- ৫. আপলোড প্রোগ্রেস বার (ঐচ্ছিক - দিলে প্রফেশনাল লাগে) -->
+        <!-- ৫. আপলোড প্রোগ্রেস বার -->
         <div class="mt-6 bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4">
             <div class="bg-blue-100 p-3 rounded-xl">
                 <i class="fa-solid fa-spinner animate-spin text-blue-600"></i>

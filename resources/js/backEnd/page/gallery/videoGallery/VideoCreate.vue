@@ -32,7 +32,7 @@
                             class="w-full text-lg font-bold p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all">
                     </div>
 
-                    <!-- ইউটিউব লিঙ্ক (মডার্ন নিউজ পোর্টাল সিস্টেম) -->
+                    <!-- ইউটিউব লিঙ্ক -->
                     <div class="flex flex-col gap-2">
                         <label class="text-sm font-bold text-gray-700 flex items-center gap-2">
                             <i class="fa-brands fa-youtube text-red-600 text-lg"></i> ইউটিউব ভিডিও লিঙ্ক (YouTube URL)
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <!-- লাইভ ভিডিও প্রিভিউ প্লেসহোল্ডার (অত্যন্ত প্রফেশনাল ফিচার) -->
+                <!-- লাইভ ভিডিও প্রিভিউ প্লেসহোল্ডার -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                     <label class="text-sm font-bold text-gray-700 mb-4 block">লাইভ প্রিভিউ (Video Preview)</label>
                     <div
