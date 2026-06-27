@@ -23,5 +23,5 @@ Route::middleware(['auth:sanctum', 'role:admin,editor'])->group(function () {
 
 // 3. Admin, editor and reporter for everyone
 Route::middleware(['auth:sanctum', 'role:admin,editor,reporter'])->group(function () {
-    //
+    Route::post('/admin/logout', [AuthController::class, 'logout']);
 });

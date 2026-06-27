@@ -120,7 +120,7 @@
 
         <!-- লগআউট বাটন -->
         <div class="p-4 border-t border-white/10 bg-black/10">
-            <button class="w-full text-left p-3 text-red-400 hover:bg-red-500/10 rounded-xl transition cursor-pointer flex items-center gap-3 font-bold">
+            <button @click="logout" class="w-full text-left p-3 text-red-400 hover:bg-red-500/10 rounded-xl transition cursor-pointer flex items-center gap-3 font-bold">
                 <i class="fa-solid fa-right-from-bracket"></i> লগআউট
             </button>
         </div>
@@ -128,9 +128,25 @@
 </template>
 
 <script>
+import AppStorage from '../../Helpers/AppStorage';
 export default {
-    props: {
-        isOpen: { type: Boolean, default: false }
+    data() {
+        return {
+            isOpen: false
+        }
+    },
+
+    methods: {
+        logout() {
+            axios.post('/api/admin/logout')
+                .then(response => {
+                    AppStorage.clear();
+                    this.$router.push({name: 'adminLogin'});
+                })
+                .catch(error => {
+                    Notification.error('Something went wrong');
+                });
+        }
     }
 }
 </script>
