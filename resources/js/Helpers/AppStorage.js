@@ -1,29 +1,31 @@
 class AppStorage {
-    StoreToken(token) {
+    storeToken(token) {
         localStorage.setItem('token', token);
     }
-    
-    StoreUser(user) {
+
+    storeUser(user) {
         localStorage.setItem('user', JSON.stringify(user));
     }
-    
-    Store(token, user) {
-        this.StoreToken(token);
-        this.StoreUser(user);
+
+    store(token, user) {
+        this.storeToken(token);
+        this.storeUser(user);
     }
-    
-    Clear() {
+
+    clear() {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
     }
-    
-    GetToken() {
+
+    getToken() {
         return localStorage.getItem('token');
     }
-    
-    GetUser() {
+
+    getUser() {
         const user = localStorage.getItem('user');
         return user ? JSON.parse(user) : null;
     }
+
 }
-export default AppStorage;
+
+export default new AppStorage();

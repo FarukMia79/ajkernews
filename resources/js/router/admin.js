@@ -6,6 +6,7 @@ export default [
     {
         path: '/admin',
         component: AdminLayout,
+        meta: { requiresAuth: true },
         children: [
             { path: '', name: 'adminDashboard', component: () => import('../backEnd/AdminDashboard.vue') },
             { path: 'news', name: 'adminNews', component: () => import('../backEnd/page/newsManagement/NewsManagement.vue') },
@@ -33,6 +34,7 @@ export default [
             { path: 'polls/:id/edit', name: 'adminEditPoll', component: () => import('../backEnd/page/poll/PollEdit.vue') },
             { path: 'users', name: 'adminUsers', component: () => import('../backEnd/page/user/UserIndex.vue') },
             { path: 'users/:id/edit', name: 'adminEditUser', component: () => import('../backEnd/page/user/UserEdit.vue') },
+            { path: 'users/create', name: 'adminCreateUser', component: () => import('../backEnd/page/user/UserCreate.vue') },
             { path: 'users/:id/reset-password', name: 'adminResetPassword', component: () => import('../backEnd/auth/UserPasswordReset.vue') },
             { path: 'settings', name: 'adminSettings', component: () => import('../backEnd/page/setting/generalSettings/SettingsIndex.vue') },
             { path: 'settings/seo', name: 'adminSeoSettings', component: () => import('../backEnd/page/setting/seoSettings/SeoSettings.vue') },

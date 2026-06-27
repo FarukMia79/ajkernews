@@ -10,10 +10,10 @@
                     <span class="text-blue-600 font-medium">ইউজার লিস্ট</span>
                 </nav>
             </div>
-            <button
+            <router-link to="/admin/users/create"
                 class="bg-[#003557] hover:bg-[#004a7c] text-white px-6 py-2.5 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-all duration-300 flex items-center gap-2 transform active:scale-95">
                 <i class="fa-solid fa-user-plus"></i> নতুন ইউজার যোগ করুন
-            </button>
+            </router-link>
         </div>
 
         <!-- ২. ফিল্টার এবং সার্চ বার -->

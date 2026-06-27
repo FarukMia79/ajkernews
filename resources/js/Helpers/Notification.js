@@ -1,4 +1,5 @@
 class Notification {
+
     success(msg = "Successfully Done") {
         Toast.fire({
             icon: "success",
@@ -30,4 +31,5 @@ class Notification {
         })
     }
 }
-export default Notification;
+
+export default new Notification();

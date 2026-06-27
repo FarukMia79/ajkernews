@@ -6,24 +6,25 @@ import router from "./router";
 
 // --- axios & App Storage ---
 import axios from 'axios';
+window.axios = axios;
 import AppStorage from './Helpers/AppStorage';
 
 // globally set token using Interceptors
 axios.interceptors.request.use(function (config) {
-    const token = AppStorage.getToken();
-    
-    config.headers['Accept'] = 'application/json'; 
-    
-    if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
-    }
-    return config;
+  const token = AppStorage.getToken();
+  
+  config.headers['Accept'] = 'application/json'; 
+  
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
 }, function (error) {
-    return Promise.reject(error);
+  return Promise.reject(error);
 });
 
-// --- notification class ---
-import Notification from './Helpers/Notification';
+// import notification class
+import Notification from '@/Helpers/Notification';
 window.Notification = Notification;
 
 // --- sweetalert2 ---
