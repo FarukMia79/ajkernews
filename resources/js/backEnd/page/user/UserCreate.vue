@@ -24,14 +24,13 @@
                 <!-- প্রোফাইল পিকচার সেকশন -->
                 <div class="flex flex-col items-center pb-8 border-b border-gray-50">
                     <div class="relative group">
-                        <img :src="imagePreview || 'https://ui-avatars.com/api/?name=Faruk+Ahmed&size=128&background=random'"
+                        <img :src="imagePreview || 'https://ui-avatars.com/api/?name=Image&size=128&background=random'"
                             class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover">
                         <label
                             class="absolute bottom-0 right-0 bg-[#003557] text-white p-2 rounded-full cursor-pointer hover:bg-blue-600 shadow-md transition transform group-hover:scale-110">
                             <i class="fa-solid fa-camera text-sm"></i>
                             <input @change="handleImageUpload" type="file" class="hidden">
                         </label>
-                        <span v-if="errors.image" class="text-red-500 text-xs mt-1 block">{{ errors.image[0] }}</span>
                     </div>
                     <p class="mt-3 text-xs text-gray-400 font-bold uppercase tracking-widest">প্রোফাইল ছবি আপলোড করুন
                     </p>
@@ -43,11 +42,13 @@
                         <label class="text-sm font-bold text-gray-700 ml-1">পূর্ণ নাম</label>
                         <input v-model="form.name" type="text" placeholder="ফারুক আহমেদ"
                             class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all">
+                        <span v-if="errors.name" class="text-red-500 text-xs mt-1 block">{{ errors.name[0] }}</span>
                     </div>
                     <div class="flex flex-col gap-2 text-lg">
                         <label class="text-sm font-bold text-gray-700 ml-1">ইমেইল ঠিকানা</label>
                         <input v-model="form.email" type="email" placeholder="faruk1@gmail.com"
                             class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all">
+                        <span v-if="errors.email" class="text-red-500 text-xs mt-1 block">{{ errors.email[0] }}</span>
                     </div>
                 </div>
 
@@ -61,6 +62,7 @@
                             <option value="editor">Editor</option>
                             <option value="reporter">Reporter</option>
                         </select>
+                        <span v-if="errors.role" class="text-red-500 text-xs mt-1 block">{{ errors.role[0] }}</span>
                     </div>
                     <div class="flex flex-col gap-2 text-lg">
                         <label class="text-sm font-bold text-gray-700 ml-1">অ্যাকাউন্ট স্ট্যাটাস</label>
@@ -70,6 +72,7 @@
                             <option value="active">অ্যাক্টিভ (Active)</option>
                             <option value="inactive">নিষ্ক্রিয় (Inactive)</option>
                         </select>
+                        <span v-if="errors.status" class="text-red-500 text-xs mt-1 block">{{ errors.status[0] }}</span>
                     </div>
                 </div>
 
@@ -85,7 +88,7 @@
                             <input v-model="form.password" :type="showPassword ? 'text' : 'password'"
                                 placeholder="••••••••"
                                 class="w-full pl-12 pr-12 py-4 bg-gray-50 border border-gray-200 rounded-2xl outline-none focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-mono">
-                            <span v-if="errors.password" class="text-red-500">{{ errors.password[0] }}</span>
+                            <span v-if="errors.password" class="text-red-500 text-xs mt-3 block">{{ errors.password[0] }}</span>
                             <!-- পাসওয়ার্ড দেখার বাটন -->
                             <button @click="showPassword = !showPassword" type="button"
                                 class="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 cursor-pointer">
@@ -104,7 +107,7 @@
                             <input v-model="form.password_confirmation" :type="showPassword ? 'text' : 'password'"
                                 placeholder="••••••••"
                                 class="w-full pl-12 pr-12 py-4 bg-gray-50 border border-gray-200 rounded-2xl outline-none focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all font-mono">
-                            <span v-if="errors.password" class="text-red-500">{{ errors.password[0] }}</span>
+                            <span v-if="errors.password" class="text-red-500 text-xs mt-3 block">{{ errors.password[0] }}</span>
                             <!-- পাসওয়ার্ড দেখার বাটন -->
                             <button @click="showPassword = !showPassword" type="button"
                                 class="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 cursor-pointer">
@@ -136,7 +139,7 @@ export default {
             form: {
                 name: '',
                 email: '',
-                image: null,
+                image: '',
                 password: '',
                 password_confirmation: '',
                 role: '',
@@ -161,7 +164,7 @@ export default {
             let formData = new FormData();
             formData.append('name', this.form.name);
             formData.append('email', this.form.email);
-            formData.append('image', this.form.image);
+            formData.append('image', this.form.image || '');
             formData.append('password', this.form.password);
             formData.append('password_confirmation', this.form.password_confirmation);
             formData.append('role', this.form.role);

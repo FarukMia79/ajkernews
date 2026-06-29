@@ -109,14 +109,25 @@ export default {
 
 
                     Notification.success('Login successful');
-                    this.$router.push({name: 'adminDashboard'});
+                    this.$router.push({ name: 'adminDashboard' });
                 })
                 .catch(error => {
-                    if (error.response.status === 422) {
-                        this.errors = error.response.data.errors;
+                    if (error.response) {
+                        if (error.response.status === 422) {
+                            // validation error
+                            this.errors = error.response.data.errors;
+                        } else if (error.response.status === 401) {
+                            // invalid credentials
+                            Notification.error(error.response.data.message || 'Email or password is incorrect');
+                        } else {
+                            // other server error
+                            Notification.error('Server error, please try again.');
+                        }
                     } else {
-                        Notification.error('Something went wrong');
+                        // if no response from server
+                        Notification.error('Cannot connect to server.');
                     }
+                    console.log(error);
                 });
         }
     }
