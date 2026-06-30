@@ -1,6 +1,6 @@
 <template>
     <div class="max-w-4xl mx-auto p-4 md:p-6">
-        <!-- ১. শিরোনাম এবং ব্রেডক্রাম্ব -->
+        <!-- page title and breadcrumb -->
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div>
                 <h1 class="text-2xl font-black text-gray-800 tracking-tight">ক্যাটাগরি সংশোধন করুন</h1>
@@ -18,49 +18,48 @@
             </router-link>
         </div>
 
-        <!-- ২. এডিট ফর্ম কার্ড -->
+        <!-- category edit form card -->
         <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 overflow-hidden">
-            <!-- একটি হালকা হলুদ বর্ডার ওপরে দেওয়া হয়েছে এটি যে এডিট পেজ তা বোঝাতে -->
             <div class="h-1.5 bg-orange-500 w-full"></div>
 
             <div class="p-6 md:p-10">
-                <form @submit.prevent class="space-y-8">
+                <form @submit.prevent="updateCategory" class="space-y-8">
 
-                    <!-- ক্যাটাগরি নাম এবং স্লাগ -->
+                    <!-- name and slug -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- নাম -->
+                        <!-- name -->
                         <div class="flex flex-col gap-2">
                             <label class="text-sm font-bold text-gray-700 ml-1">ক্যাটাগরির নাম</label>
-                            <input type="text" value="জাতীয়"
+                            <input v-model="form.name" type="text"
                                 class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:bg-white focus:ring-4 focus:ring-orange-500/10 focus:border-orange-500 transition-all duration-300 font-bold">
                         </div>
 
-                        <!-- স্লাগ -->
+                        <!-- slug -->
                         <div class="flex flex-col gap-2">
                             <label class="text-sm font-bold text-gray-700 ml-1">স্লাগ / URL (পরিবর্তন না করাই
                                 ভালো)</label>
-                            <input type="text" value="national-news"
+                            <input v-model="form.slug" type="text"
                                 class="w-full bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-gray-500 outline-none cursor-not-allowed"
                                 readonly>
                         </div>
                     </div>
 
-                    <!-- বর্ণনা -->
+                    <!-- description -->
                     <div class="flex flex-col gap-2">
                         <label class="text-sm font-bold text-gray-700 ml-1">সংক্ষিপ্ত বর্ণনা</label>
-                        <textarea rows="4"
+                        <textarea v-model="form.description" rows="4"
                             class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:bg-white focus:ring-4 focus:ring-orange-500/10 focus:border-orange-500 transition-all duration-300 resize-none">বাংলাদেশের সব জেলার সর্বশেষ খবর এই ক্যাটাগরিতে থাকবে।</textarea>
                     </div>
 
-                    <!-- স্ট্যাটাস এবং সাবমিট বাটন -->
+                    <!-- status and submit button -->
                     <div
                         class="flex flex-col md:flex-row justify-between items-center gap-6 pt-6 border-t border-gray-50">
                         <div class="flex items-center gap-4">
                             <label class="text-sm font-bold text-gray-700">অবস্থা:</label>
-                            <select
+                            <select v-model="form.status"
                                 class="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-orange-500 transition cursor-pointer">
-                                <option value="1" selected>সক্রিয় (Active)</option>
-                                <option value="0">নিষ্ক্রিয় (Inactive)</option>
+                                <option value="active">সক্রিয় (Active)</option>
+                                <option value="inactive">নিষ্ক্রিয় (Inactive)</option>
                             </select>
                         </div>
 
@@ -69,7 +68,7 @@
                                 class="flex-1 md:flex-none px-8 py-3 text-gray-500 hover:text-gray-800 font-bold transition">
                                 বাতিল
                             </button>
-                            <button
+                            <button type="submit"
                                 class="flex-1 md:flex-none bg-[#003557] hover:bg-[#004a7c] text-white px-10 py-3 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2">
                                 <i class="fa-solid fa-floppy-disk"></i> পরিবর্তন সেভ করুন
                             </button>
@@ -79,7 +78,7 @@
             </div>
         </div>
 
-        <!-- ৩. সতর্কবার্তা (Warning) - এডিট পেজের জন্য এটি প্রফেশনাল টিপস -->
+        <!-- tips -->
         <div class="mt-8 p-4 bg-orange-50 border-l-4 border-orange-400 rounded-r-lg flex gap-4 items-start">
             <i class="fa-solid fa-triangle-exclamation text-orange-500 mt-1"></i>
             <div>
@@ -95,7 +94,70 @@
 
 <script>
 export default {
+    data() {
+        return {
+            form: {
+                name: '',
+                slug: '',
+                description: '',
+                status: ''
+            },
+            id: this.$route.params.id,
+            errors: {}
+        }
+    },
+    watch: {
+        'form.name'(newVal) {
+            if (this.form) {
+                this.form.slug = this.generateSlug(newVal);
+            }
+        }
+    },
+    mounted() {
+        this.getCategory();
+    },
+    methods: {
+        // 2. Slug generator function
+        generateSlug(text) {
+            if (!text) return '';
 
+            return text
+                .toString()
+                .trim()
+                .toLowerCase() // all letters to lowercase
+                .replace(/\s+/g, '-') // replace spaces with hyphens
+                .replace(/[^\w\-]+/g, '') // remove special characters
+                .replace(/\-\-+/g, '-'); // replace multiple hyphens with single hyphen
+        },
+        getCategory() {
+            axios.get(`/api/category/${this.id}`)
+                .then(response => {
+                    this.form = response.data;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        },
+        updateCategory() {
+            let formData = new FormData();
+            formData.append('name', this.form.name);
+            formData.append('slug', this.form.slug);
+            formData.append('description', this.form.description);
+            formData.append('status', this.form.status);
+
+            formData.append('_method', 'PUT');
+
+            axios.post(`/api/category/update/${this.id}`, formData)
+                .then(response => {
+                    Notification.success('Category updated successfully');
+                    this.$router.push('/admin/categories');
+                })
+                .catch(error => {
+                    Notification.error('Category update failed');
+                    console.log(error);
+                });
+        }
+    }
 }
 </script>
 

@@ -18,7 +18,7 @@ class CategoryResource extends JsonResource
             "id"=> $this->id,
             "name"=> $this->name,
             "slug"=> $this->slug,
-            "description"=> $this->description,
+            "description"=> $this->description ? $this->description : 'No description',
             "status"=> $this->status ? 'active' : 'inactive',
             "created_at" => $this->created_at->format('d M Y'),
         ];

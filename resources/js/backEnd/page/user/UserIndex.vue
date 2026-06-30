@@ -122,25 +122,25 @@
             <div
                 class="px-6 py-4 bg-gray-50/50 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
 
-                <!-- ডাইনামিক স্ট্যাটাস টেক্সট -->
+                <!-- dynamic status text -->
                 <span class="text-sm text-gray-500 font-medium" v-if="meta.total">
-                    মোট {{ meta.total }} জনের মধ্যে {{ meta.from }}-{{ meta.to }} জন দেখানো হচ্ছে
+                    Total {{ meta.total }} users, showing {{ meta.from }}-{{ meta.to }}
                 </span>
 
-                <!-- প্যাজিনেশন কন্ট্রোল -->
+                <!-- pagination controls -->
                 <div class="flex gap-2">
-                    <!-- আগের বাটন -->
+                    <!-- previous button -->
                     <button @click="allUsers(meta.current_page - 1)" :disabled="meta.current_page === 1"
                         :class="meta.current_page === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:text-blue-600'"
                         class="p-2 px-4 bg-white border border-gray-200 rounded-xl font-bold transition shadow-sm">
-                        আগের
+                        Previous
                     </button>
 
-                    <!-- পরের বাটন -->
+                    <!-- next button -->
                     <button @click="allUsers(meta.current_page + 1)" :disabled="meta.current_page === meta.last_page"
                         :class="meta.current_page === meta.last_page ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:text-blue-600'"
                         class="p-2 px-4 bg-white border border-gray-200 rounded-xl font-bold transition shadow-sm">
-                        পরের
+                        Next
                     </button>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 <template>
     <div class="p-2 md:p-4">
-        <!-- ১. শিরোনাম এবং "নতুন যোগ করুন" বাটন -->
+        <!-- title and add new button -->
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div>
                 <h1 class="text-2xl font-black text-gray-800 tracking-tight">ক্যাটাগরি তালিকা</h1>
@@ -16,12 +16,12 @@
             </router-link>
         </div>
 
-        <!-- ২. ফিল্টার এবং সার্চ বার -->
+        <!-- filter and search bar -->
         <div
             class="bg-white p-4 rounded-t-2xl border-x border-t border-gray-100 flex flex-col md:flex-row justify-between gap-4">
             <div class="relative w-full md:w-80">
                 <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                <input type="text" placeholder="ক্যাটাগরি খুঁজুন..."
+                <input v-model="search" type="text" placeholder="ক্যাটাগরি খুঁজুন..."
                     class="w-full pl-11 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all">
             </div>
             <div class="flex gap-2">
@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <!-- ৩. ক্যাটাগরি টেবিল -->
+        <!-- category table -->
         <div class="bg-white rounded-b-2xl shadow-xl shadow-gray-200/50 border border-gray-100 overflow-hidden">
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse">
@@ -49,33 +49,36 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-50">
-                        <!-- ডামি ডাটা লুপ (ভবিষ্যতে এটি ডাইনামিক হবে) -->
-                        <tr v-for="i in 5" :key="i" class="hover:bg-blue-50/30 transition-colors group">
-                            <td class="px-6 py-4 text-sm text-gray-600 font-medium">#{{ 100 + i }}</td>
+                        <!-- data loop -->
+                        <tr v-for="category in categories" :key="category.id"
+                            class="hover:bg-blue-50/30 transition-colors group">
+                            <td class="px-6 py-4 text-sm text-gray-600 font-medium">#{{ category.id }}</td>
                             <td class="px-6 py-4">
-                                <span
-                                    class="text-gray-800 font-bold group-hover:text-blue-600 transition-colors">জাতীয়</span>
+                                <span class="text-gray-800 font-bold group-hover:text-blue-600 transition-colors">{{
+                                    category.name }}</span>
                             </td>
-                            <td class="px-6 py-4 text-sm text-gray-500">national-news</td>
+                            <td class="px-6 py-4 text-sm text-gray-500">{{ category.slug }}</td>
                             <td class="px-6 py-4">
-                                <!-- সক্রিয় ব্যাজ -->
-                                <span v-if="i % 2 !== 0"
+                                <!-- active badge -->
+                                <span v-if="category.status === 'active'"
                                     class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> সক্রিয়
+                                    <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Active
                                 </span>
-                                <!-- নিষ্ক্রিয় ব্যাজ -->
+                                <!-- inactive badge -->
                                 <span v-else
                                     class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> নিষ্ক্রিয়
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Inactive
                                 </span>
                             </td>
                             <td class="px-6 py-4 text-right">
                                 <div class="flex justify-end gap-2">
-                                    <router-link :to="`/admin/categories/${100 + i}/edit`" class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition"
+                                    <router-link :to="{name: 'adminEditCategory', params: {id: category.id}}"
+                                        class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition"
                                         title="এডিট করুন">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </router-link>
-                                    <button class="p-2 text-red-600 hover:bg-red-50 rounded-lg transition"
+                                    <button @click="deleteCategory(category.id)"
+                                        class="p-2 text-red-600 cursor-pointer hover:bg-red-50 rounded-lg transition"
                                         title="ডিলিট করুন">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
@@ -86,15 +89,31 @@
                 </table>
             </div>
 
-            <!-- ৪. প্যাজিনেশন (Pagination) ডিজাইন -->
+            <!-- pagination -->
             <div
                 class="px-6 py-4 bg-gray-50/50 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
-                <span class="text-sm text-gray-500 font-medium">১০টির মধ্যে ১-৫টি ক্যাটাগরি দেখানো হচ্ছে</span>
+
+                <!-- dynamic status text -->
+                <span class="text-sm text-gray-500 font-medium" v-if="meta.total">
+                    মোট {{ meta.total }} জনের মধ্যে {{ meta.from }}-{{ meta.to }} জন দেখানো হচ্ছে
+                </span>
+
+                <!-- pagination controls -->
                 <div class="flex gap-2">
-                    <button
-                        class="px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-400 cursor-not-allowed font-bold transition">আগের</button>
-                    <button
-                        class="px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-700 hover:border-blue-500 hover:text-blue-600 font-bold transition">পরের</button>
+                    <!-- previous button -->
+                    <button @click="allCategories(meta.current_page - 1)" :disabled="meta.current_page === 1"
+                        :class="meta.current_page === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:text-blue-600'"
+                        class="p-2 px-4 bg-white border border-gray-200 rounded-xl font-bold transition shadow-sm">
+                        Previous
+                    </button>
+
+                    <!-- next button -->
+                    <button @click="allCategories(meta.current_page + 1)"
+                        :disabled="meta.current_page === meta.last_page"
+                        :class="meta.current_page === meta.last_page ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:text-blue-600'"
+                        class="p-2 px-4 bg-white border border-gray-200 rounded-xl font-bold transition shadow-sm">
+                        Next
+                    </button>
                 </div>
             </div>
         </div>
@@ -102,8 +121,68 @@
 </template>
 
 <script>
+import Notification from '../../../helpers/Notification';
 export default {
+    data() {
+        return {
+            categories: [],
+            meta: {},
+            search: '',
 
+        }
+    },
+    watch: {
+        search() {
+            this.allCategories();
+        }
+    },
+    mounted() {
+        this.allCategories();
+    },
+    methods: {
+        allCategories(page = 1) {
+            axios.get('/api/category', {
+                params: {
+                    page: page,
+                    search: this.search
+                }
+            })
+                .then(response => {
+                    this.categories = response.data.data;
+                    this.meta = response.data.meta;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        },
+        deleteCategory(id) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your category has been deleted.",
+                        icon: "success"
+                    });
+                    axios.delete('/api/category/' + id)
+                        .then(() => {
+                            this.categories = this.categories.filter(category => {
+                                return category.id != id;
+                            });
+                        }).catch((error) => {
+                            console.log(error);
+                        });
+                }
+            });
+        }
+    }
 }
 </script>
 
