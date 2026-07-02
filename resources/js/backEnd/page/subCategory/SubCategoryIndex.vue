@@ -10,7 +10,7 @@
                     <span class="text-blue-600 font-medium">সাব-ক্যাটাগরি</span>
                 </nav>
             </div>
-            <router-link to="/admin/sub-categories/create" class="bg-[#003557] hover:bg-[#004a7c] text-white px-6 py-2.5 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-all duration-300 flex items-center gap-2 transform active:scale-95">
+            <router-link to="/admin/sub-categories/create" :class="currentUserRole !== 'admin' ? 'opacity-30 grayscale cursor-not-allowed pointer-events-none' : ''" class="bg-[#003557] hover:bg-[#004a7c] text-white px-6 py-2.5 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-all duration-300 flex items-center gap-2 transform active:scale-95">
                 <i class="fa-solid fa-plus"></i> নতুন সাব-ক্যাটাগরি
             </router-link>
         </div>
@@ -75,7 +75,7 @@
                                 </span>
                             </td>
                             <td class="px-6 py-4 text-right">
-                                <div class="flex justify-end gap-2">
+                                <div :class="currentUserRole !== 'admin' ? 'opacity-30 grayscale cursor-not-allowed pointer-events-none' : ''" class="flex justify-end gap-2">
                                     <router-link :to="{ name: 'adminEditSubCategory', params: { id: subCategory.id } }" class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition" title="এডিট">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </router-link>
@@ -102,6 +102,8 @@
 </template>
 
 <script>
+import AppStorage from '../../../Helpers/AppStorage';
+
 export default {
     data() {
         return {
@@ -110,7 +112,8 @@ export default {
             meta: {},
             search: '',
             filterCategory: '',
-            filterStatus: ''
+            filterStatus: '',
+            currentUserRole: AppStorage.getUser()?.role || '',
         }
     },
     watch: {

@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\SubCategoryController;
+use App\Http\Controllers\Api\DivisionController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -27,6 +28,10 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
     Route::post('sub-category', [SubCategoryController::class, 'store']);
     Route::put('sub-category/update/{subCategory}', [SubCategoryController::class,'update']);
     Route::delete('sub-category/{subCategory}', [SubCategoryController::class, 'destroy']);
+
+    Route::post('division', [DivisionController::class, 'store']);
+    Route::put('division/update/{division}', [DivisionController::class,'update']);
+    Route::delete('division/{division}', [DivisionController::class, 'destroy']);
 });
 
 
@@ -48,6 +53,9 @@ Route::middleware(['auth:sanctum', 'role:admin,editor,reporter'])->group(functio
     
     Route::get('sub-category', [SubCategoryController::class, 'index']);
     Route::get('sub-category/{subCategory}', [SubCategoryController::class, 'show']);
+
+    Route::get('division', [DivisionController::class, 'index']);
+    Route::get('division/{division}', [DivisionController::class, 'show']);
     
 
     Route::post('/admin/logout', [AuthController::class, 'logout']);

@@ -44,6 +44,12 @@
                 <i class="fa-solid fa-list-check w-5 text-purple-400"></i> সাব ক্যাটাগরি
             </router-link>
 
+            <router-link to="/admin/divisions" 
+                class="flex items-center gap-3 p-3 rounded-xl transition-all duration-200 text-[14px] font-medium text-gray-300 hover:text-white hover:bg-white/10"
+                active-class="bg-blue-600/20 !text-white border-l-4 border-blue-500 !rounded-none !rounded-r-xl">
+                <i class="fa-solid fa-earth-asia w-5 text-purple-400"></i> বিভাগ
+            </router-link>
+
             <router-link to="/admin/tags" 
                 class="flex items-center gap-3 p-3 rounded-xl transition-all duration-200 text-[14px] font-medium text-gray-300 hover:text-white hover:bg-white/10"
                 active-class="bg-blue-600/20 !text-white border-l-4 border-blue-500 !rounded-none !rounded-r-xl">
