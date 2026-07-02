@@ -142,7 +142,7 @@ export default {
             let formData = new FormData();
             formData.append('name', this.form.name);
             formData.append('slug', this.form.slug);
-            formData.append('description', this.form.description);
+            formData.append('description', this.form.description || '');
             formData.append('status', this.form.status);
 
             formData.append('_method', 'PUT');

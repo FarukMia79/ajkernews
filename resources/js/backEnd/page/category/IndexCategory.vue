@@ -11,6 +11,7 @@
                 </nav>
             </div>
             <router-link to="/admin/categories/create"
+                :class="currentUserRole !== 'admin' ? 'opacity-30 grayscale cursor-not-allowed pointer-events-none' : ''"
                 class="bg-[#003557] hover:bg-[#004a7c] text-white px-6 py-2.5 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-all duration-300 flex items-center gap-2 transform active:scale-95">
                 <i class="fa-solid fa-plus"></i> নতুন ক্যাটাগরি
             </router-link>
@@ -50,9 +51,9 @@
                     </thead>
                     <tbody class="divide-y divide-gray-50">
                         <!-- data loop -->
-                        <tr v-for="category in categories" :key="category.id"
+                        <tr v-for="(category, index) in categories" :key="category.id"
                             class="hover:bg-blue-50/30 transition-colors group">
-                            <td class="px-6 py-4 text-sm text-gray-600 font-medium">#{{ category.id }}</td>
+                            <td class="px-6 py-4 text-sm text-gray-600 font-medium">#{{ index + 1 }}</td>
                             <td class="px-6 py-4">
                                 <span class="text-gray-800 font-bold group-hover:text-blue-600 transition-colors">{{
                                     category.name }}</span>
@@ -71,8 +72,9 @@
                                 </span>
                             </td>
                             <td class="px-6 py-4 text-right">
-                                <div class="flex justify-end gap-2">
-                                    <router-link :to="{name: 'adminEditCategory', params: {id: category.id}}"
+                                <div :class="currentUserRole !== 'admin' ? 'opacity-30 grayscale cursor-not-allowed pointer-events-none' : ''"
+                                    class="flex justify-end gap-2">
+                                    <router-link :to="{ name: 'adminEditCategory', params: { id: category.id } }"
                                         class="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition"
                                         title="এডিট করুন">
                                         <i class="fa-solid fa-pen-to-square"></i>
@@ -90,30 +92,11 @@
             </div>
 
             <!-- pagination -->
-            <div
-                class="px-6 py-4 bg-gray-50/50 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
-
-                <!-- dynamic status text -->
-                <span class="text-sm text-gray-500 font-medium" v-if="meta.total">
-                    মোট {{ meta.total }} জনের মধ্যে {{ meta.from }}-{{ meta.to }} জন দেখানো হচ্ছে
-                </span>
-
-                <!-- pagination controls -->
+            <div class="px-6 py-4 bg-gray-50/50 border-t border-gray-100 flex justify-between items-center">
+                <span v-if="meta.total" class="text-sm text-gray-500 font-medium">মোট {{ meta.total }}টি ক্যাটাগরির মধ্যে {{ meta.from }}-{{ meta.to }}টি দেখানো হচ্ছে</span>
                 <div class="flex gap-2">
-                    <!-- previous button -->
-                    <button @click="allCategories(meta.current_page - 1)" :disabled="meta.current_page === 1"
-                        :class="meta.current_page === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:text-blue-600'"
-                        class="p-2 px-4 bg-white border border-gray-200 rounded-xl font-bold transition shadow-sm">
-                        Previous
-                    </button>
-
-                    <!-- next button -->
-                    <button @click="allCategories(meta.current_page + 1)"
-                        :disabled="meta.current_page === meta.last_page"
-                        :class="meta.current_page === meta.last_page ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:text-blue-600'"
-                        class="p-2 px-4 bg-white border border-gray-200 rounded-xl font-bold transition shadow-sm">
-                        Next
-                    </button>
+                    <button @click="allCategories(meta.current_page - 1)" :disabled="meta.current_page === 1" :class="meta.current_page === 1 ? 'px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-400 font-bold transition text-sm' : 'px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-700 hover:text-blue-600 font-bold transition text-sm'">Previous</button>
+                    <button @click="allCategories(meta.current_page + 1)" :disabled="meta.current_page === meta.last_page" :class="meta.current_page === meta.last_page ? 'px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-400 font-bold transition text-sm' : 'px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-700 hover:text-blue-600 font-bold transition text-sm'">Next</button>
                 </div>
             </div>
         </div>
@@ -121,19 +104,20 @@
 </template>
 
 <script>
-import Notification from '../../../helpers/Notification';
+import AppStorage from '../../../helpers/AppStorage';
 export default {
     data() {
         return {
             categories: [],
             meta: {},
             search: '',
+            currentUserRole: AppStorage.getUser()?.role || '',
 
         }
     },
     watch: {
         search() {
-            this.allCategories();
+            this.allCategories(1);
         }
     },
     mounted() {

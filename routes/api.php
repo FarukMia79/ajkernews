@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\SubCategoryController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -22,6 +23,8 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
     Route::post('category', [CategoryController::class, 'store']);
     Route::put('category/update/{category}', [CategoryController::class,'update']);
     Route::delete('category/{category}', [CategoryController::class,'destroy']);
+    
+    Route::post('sub-category', [SubCategoryController::class, 'store']);
 });
 
 
@@ -40,6 +43,8 @@ Route::middleware(['auth:sanctum', 'role:admin,editor,reporter'])->group(functio
 
     Route::get('category', [CategoryController::class, 'index']);
     Route::get('category/{category}', [CategoryController::class, 'show']);
+    
+    Route::get('sub-category', [SubCategoryController::class, 'index']);
     
 
     Route::post('/admin/logout', [AuthController::class, 'logout']);
