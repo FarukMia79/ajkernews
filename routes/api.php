@@ -25,6 +25,7 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
     Route::delete('category/{category}', [CategoryController::class,'destroy']);
     
     Route::post('sub-category', [SubCategoryController::class, 'store']);
+    Route::delete('sub-category/{subCategory}', [SubCategoryController::class, 'destroy']);
 });
 
 

@@ -79,6 +79,8 @@ class SubCategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $subCategory = SubCategory::findOrFail($id);
+        $subCategory->delete();
+        return response()->json(['message' => 'Sub category deleted successfully']);
     }
 }

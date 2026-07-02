@@ -79,7 +79,7 @@
                                     <router-link :to="{ name: 'adminEditSubCategory', params: { id: subCategory.id } }" class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition" title="এডিট">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </router-link>
-                                    <button class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition" title="ডিলিট">
+                                    <button @click="deleteSubCategory(subCategory.id)" class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition" title="ডিলিট">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </button>
                                 </div>
@@ -154,6 +154,33 @@ export default {
                 .catch(error => {
                     console.log(error);
                 });
+        },
+        deleteSubCategory(id) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your sub category has been deleted.",
+                        icon: "success"
+                    });
+                    axios.delete('/api/sub-category/' + id)
+                        .then(() => {
+                            this.subCategories = this.subCategories.filter(subCategory => {
+                                return subCategory.id != id;
+                            });
+                        }).catch((error) => {
+                            console.log(error);
+                        });
+                }
+            });
         }
     }
 }
