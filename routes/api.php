@@ -25,6 +25,7 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
     Route::delete('category/{category}', [CategoryController::class,'destroy']);
     
     Route::post('sub-category', [SubCategoryController::class, 'store']);
+    Route::put('sub-category/update/{subCategory}', [SubCategoryController::class,'update']);
     Route::delete('sub-category/{subCategory}', [SubCategoryController::class, 'destroy']);
 });
 
@@ -46,6 +47,7 @@ Route::middleware(['auth:sanctum', 'role:admin,editor,reporter'])->group(functio
     Route::get('category/{category}', [CategoryController::class, 'show']);
     
     Route::get('sub-category', [SubCategoryController::class, 'index']);
+    Route::get('sub-category/{subCategory}', [SubCategoryController::class, 'show']);
     
 
     Route::post('/admin/logout', [AuthController::class, 'logout']);

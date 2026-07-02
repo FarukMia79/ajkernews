@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSubCategoryRequest;
+use App\Http\Requests\UpdateSubCategoryRequest;
 use App\Http\Resources\SubCategoryResource;
 use App\Models\SubCategory;
-use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
 {
@@ -55,7 +55,8 @@ class SubCategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $subCategory = SubCategory::findOrFail($id);
+        return response()->json($subCategory);
     }
 
     /**
@@ -69,9 +70,11 @@ class SubCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateSubCategoryRequest $request, string $id)
     {
-        //
+        $subCategory = SubCategory::findOrFail($id);
+        $subCategory->update($request->all());
+        return response()->json(['message' => 'Sub category updated successfully']);
     }
 
     /**
