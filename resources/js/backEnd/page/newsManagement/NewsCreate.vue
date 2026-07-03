@@ -91,11 +91,42 @@
                             <label class="text-xs font-bold text-gray-500">প্রধান ক্যাটাগরি</label>
                             <select
                                 class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl outline-none cursor-pointer">
+                                <option value="">ক্যাটাগরি নির্বাচন করুন</option>
                                 <option>জাতীয়</option>
                                 <option>রাজনীতি</option>
                                 <option>খেলাধুলা</option>
                             </select>
                         </div>
+
+                        <!-- সাব-ক্যাটাগরি -->
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold text-gray-500">সাব-ক্যাটাগরি</label>
+                            <select
+                                class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl outline-none cursor-pointer">
+                                <option value="">সাব-ক্যাটাগরি নির্বাচন করুন</option>
+                                <option>আন্তর্জাতিক</option>
+                                <option>অর্থনীতি</option>
+                                <option>বিনোদন</option>
+                            </select>
+                        </div>
+
+                        <!-- বিভাগ -->
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs font-bold text-gray-500">বিভাগ</label>
+                            <select
+                                class="w-full p-3 bg-gray-50 border border-gray-200 rounded-xl outline-none cursor-pointer">
+                                <option value="">বিভাগ নির্বাচন করুন</option>
+                                <option>ঢাকা</option>
+                                <option>চট্টগ্রাম</option>
+                                <option>রাজশাহী</option>
+                                <option>খুলনা</option>
+                                <option>বরিশাল</option>
+                                <option>সিলেট</option>
+                                <option>রংপুর</option>
+                                <option>ময়মনসিংহ</option>
+                            </select>
+                        </div>
+
                         <div class="flex flex-col gap-2">
                             <label class="text-xs font-bold text-gray-500">ট্যাগ (কমা দিয়ে লিখুন)</label>
                             <input type="text" placeholder="উদা: ক্রিকেট, বিসিবি"
