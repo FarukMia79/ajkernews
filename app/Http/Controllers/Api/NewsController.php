@@ -9,6 +9,8 @@ use App\Http\Resources\NewsResource;
 use App\Models\News;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
+use App\Models\Tag;
+
 
 class NewsController extends Controller
 {
@@ -34,7 +36,7 @@ class NewsController extends Controller
     public function store(StoreNewsRequest $request)
     {
         $data = $request->validated();
-        
+
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $imageName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
@@ -46,13 +48,29 @@ class NewsController extends Controller
 
             $manager = new ImageManager(new Driver());
             $image = $manager->read($file);
-            $image->cover(480,250);
+            $image->cover(480, 250);
             $image->save($imagePath . $imageName);
 
             $data['image'] = 'uploads/news/' . $imageName;
         }
-        
+
+        $data['user_id'] = auth()->id();
+
         $news = News::create($data);
+
+        if ($request->has('tags')) {
+            $tagIds = [];
+            foreach ($request->tags as $tagName) {
+                $tag = Tag::firstOrCreate(
+                    ['name' => trim($tagName)],
+                    ['slug' => str()->slug(trim($tagName))]
+                );
+                $tagIds[] = $tag->id;
+            }
+            $news->tags()->sync($tagIds);
+        }
+
+
         return new NewsResource($news);
     }
 

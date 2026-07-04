@@ -33,6 +33,12 @@ class SubCategoryController extends Controller
         return SubCategoryResource::collection($category);
     }
 
+    public function getByCategory($categoryId)
+    {
+        $subCategories = SubCategory::where('category_id', $categoryId)->get();
+        return response()->json($subCategories);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

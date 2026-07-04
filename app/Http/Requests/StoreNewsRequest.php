@@ -23,7 +23,6 @@ class StoreNewsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|exists:users,id',
             'category_id' => 'required|exists:categories,id',
             'sub_category_id' => 'nullable|exists:sub_categories,id',
             'division_id' => 'nullable|exists:divisions,id',

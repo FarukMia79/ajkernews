@@ -41,4 +41,9 @@ class News extends Model
     {
         return $this->belongsTo(Division::class);
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

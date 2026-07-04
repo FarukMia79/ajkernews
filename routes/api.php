@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\SubCategoryController;
 use App\Http\Controllers\Api\DivisionController;
+use App\Http\Controllers\Api\NewsController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -32,6 +33,9 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
     Route::post('division', [DivisionController::class, 'store']);
     Route::put('division/update/{division}', [DivisionController::class,'update']);
     Route::delete('division/{division}', [DivisionController::class, 'destroy']);
+
+    Route::post('news', [NewsController::class, 'store']);
+    Route::get('sub-categories/by-category/{categoryId}', [SubCategoryController::class, 'getByCategory']);
 });
 
 
