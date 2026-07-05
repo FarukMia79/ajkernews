@@ -24,13 +24,16 @@ class NewsResource extends JsonResource
             'slug' => $this->slug,
             'content' => $this->content,
             'meta_description' => $this->meta_description,
-            'image' => $this->image,
+            'image' => $this->image ? url($this->image) : null,
+            'category' => $this->category->name ?? 'N/A', 
+            'reporter_name' => $this->user->name ?? 'Unknown', 
+            'reporter_image' => $this->user->image ? url($this->user->image) : 'https://ui-avatars.com/api/?name=' . $this->user->name,
             'status' => $this->status,
             'is_breaking' => $this->is_breaking,
             'is_slider' => $this->is_slider,
             'allow_comment' => $this->allow_comment,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at
+            'created_at' => $this->created_at->format('d M Y'),
+            'updated_at' => $this->updated_at->format('d M Y')
         ];
     }
 }

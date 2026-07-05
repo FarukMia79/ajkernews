@@ -17,9 +17,24 @@ class NewsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = News::with(['category', 'user'])->latest();
+
+        if ($request->search) {
+            $query->where('title', 'like', '%' . $request->search . '%');
+        }
+
+        if ($request->category_id) {
+            $query->where('category_id', $request->category_id);
+        }
+
+        if ($request->status) {
+            $query->where('status', $request->status);
+        }   
+
+        $news = $query->paginate(10);
+        return NewsResource::collection($news);
     }
 
     /**
@@ -103,6 +118,14 @@ class NewsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $news = News::findOrFail($id);
+        if ($news->image) {
+            $imagePath = public_path($news->image);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+        $news->delete();
+        return response()->json(['message' => 'News deleted successfully']);
     }
 }

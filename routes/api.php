@@ -34,15 +34,15 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
     Route::put('division/update/{division}', [DivisionController::class,'update']);
     Route::delete('division/{division}', [DivisionController::class, 'destroy']);
 
-    Route::post('news', [NewsController::class, 'store']);
-    Route::get('sub-categories/by-category/{categoryId}', [SubCategoryController::class, 'getByCategory']);
+    
 });
 
 
 
 // 2. For admin and editor
 Route::middleware(['auth:sanctum', 'role:admin,editor'])->group(function () {
-    //
+    Route::delete('news/delete/{news}', [NewsController::class, 'destroy']);
+    
 });
 
 
@@ -60,6 +60,10 @@ Route::middleware(['auth:sanctum', 'role:admin,editor,reporter'])->group(functio
 
     Route::get('division', [DivisionController::class, 'index']);
     Route::get('division/{division}', [DivisionController::class, 'show']);
+
+    Route::get('news', [NewsController::class, 'index']);
+    Route::post('news/store', [NewsController::class, 'store']);
+    Route::get('sub-categories/by-category/{categoryId}', [SubCategoryController::class, 'getByCategory']);
     
 
     Route::post('/admin/logout', [AuthController::class, 'logout']);

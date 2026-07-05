@@ -1,6 +1,6 @@
 <template>
     <div class="p-2 md:p-4">
-        <!-- ১. শিরোনাম এবং "নতুন খবর লিখুন" বাটন -->
+        <!-- title and breadcrumb -->
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div>
                 <h1 class="text-2xl font-black text-gray-800 tracking-tight">নিউজ ম্যানেজমেন্ট</h1>
@@ -16,32 +16,30 @@
             </router-link>
         </div>
 
-        <!-- ২. ফিল্টার এবং সার্চ সেকশন (প্রফেশনাল লেআউট) -->
+        <!-- filter and search -->
         <div class="bg-white p-5 rounded-t-2xl border-x border-t border-gray-100 grid grid-cols-1 md:grid-cols-4 gap-4">
             <!-- সার্চ বার -->
             <div class="relative md:col-span-2">
                 <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                <input type="text" placeholder="খবরের শিরোনাম বা কি-ওয়ার্ড দিয়ে খুঁজুন..."
+                <input v-model="search" type="text" placeholder="খবরের শিরোনাম বা কি-ওয়ার্ড দিয়ে খুঁজুন..."
                     class="w-full pl-11 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all">
             </div>
-            <!-- ক্যাটাগরি ফিল্টার -->
-            <select
+            <!-- category filter -->
+            <select v-model="filterCategory"
                 class="px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-600 outline-none focus:ring-2 focus:ring-blue-500 transition cursor-pointer">
-                <option value="">সব ক্যাটাগরি</option>
-                <option value="1">জাতীয়</option>
-                <option value="2">রাজনীতি</option>
-                <option value="3">খেলাধুলা</option>
+                <option value="">ক্যাটাগরি</option>
+                <option v-for="category in categories" :key="category.id" :value="category.id">{{ category.name }}</option>
             </select>
-            <!-- স্ট্যাটাস ফিল্টার -->
-            <select
+            <!-- status filter -->
+            <select v-model="filterStatus"
                 class="px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-gray-600 outline-none focus:ring-2 focus:ring-blue-500 transition cursor-pointer">
-                <option value="">সব স্ট্যাটাস</option>
+                <option value="">স্ট্যাটাস</option>
                 <option value="published">পাবলিশড</option>
                 <option value="draft">ড্রাফট</option>
             </select>
         </div>
 
-        <!-- ৩. নিউজ টেবিল -->
+        <!-- news table -->
         <div class="bg-white rounded-b-2xl shadow-xl shadow-gray-200/50 border border-gray-100 overflow-hidden">
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse">
@@ -61,40 +59,38 @@
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-50">
-                        <!-- ডামি নিউজ লুপ (ভবিষ্যতে এটি API থেকে আসবে) -->
-                        <tr v-for="i in 5" :key="i" class="hover:bg-blue-50/30 transition-colors group">
-                            <!-- ছবি -->
+                        <tr v-for="item in news" :key="item.id" class="hover:bg-blue-50/30 transition-colors group">
+                            <!-- image -->
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <img src="../../../../../public/uploads/post/parlament-sm-20171120165706.jpg"
-                                    alt="Thumbnail" class="w-16 h-10 object-cover rounded shadow-sm">
+                                <img :src="item.image" :alt="item.title" class="w-16 h-10 object-cover rounded shadow-sm">
                             </td>
-                            <!-- শিরোনাম -->
+                            <!-- title -->
                             <td class="px-6 py-4 min-w-[250px]">
                                 <a href="#"
                                     class="text-gray-800 font-bold group-hover:text-blue-600 transition-colors line-clamp-1">
-                                    সরকারি অফিসে ৩ লাখ ৬০ হাজার পদ শূন্য : নতুন নিয়োগ আসছে
+                                    {{ item.title }}
                                 </a>
-                                <p class="text-[10px] text-gray-400 mt-0.5">ভিউ হয়েছে: ১২,৪৫০ বার</p>
+                                <p class="text-[10px] text-gray-400 mt-0.5">ভিউ হয়েছে: {{ item.views }} বার</p>
                             </td>
-                            <!-- ক্যাটাগরি -->
+                            <!-- caregory -->
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span
-                                    class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-100 text-blue-700">জাতীয়</span>
+                                    class="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-100 text-blue-700">{{ item.category }}</span>
                             </td>
-                            <!-- লেখক -->
+                            <!-- reporter -->
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center gap-2">
-                                    <img src="https://ui-avatars.com/api/?name=Faruk" class="w-6 h-6 rounded-full">
-                                    <span class="text-sm text-gray-600 font-medium">ফারুক</span>
+                                    <img :src="item.reporter_image" class="w-6 h-6 rounded-full">
+                                    <span class="text-sm text-gray-600 font-medium">{{ item.reporter_name }}</span>
                                 </div>
                             </td>
-                            <!-- তারিখ -->
+                            <!-- date -->
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                ১২ জুন ২০২৪
+                                {{ item.created_at }}
                             </td>
-                            <!-- স্ট্যাটাস -->
+                            <!-- status -->
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <span v-if="i % 2 !== 0"
+                                <span v-if="item.status === 'published'"
                                     class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">
                                     <i class="fa-solid fa-circle-check text-[10px]"></i> পাবলিশড
                                 </span>
@@ -103,21 +99,21 @@
                                     <i class="fa-solid fa-clock text-[10px]"></i> ড্রাফট
                                 </span>
                             </td>
-                            <!-- অ্যাকশন বাটন -->
+                            <!-- action buttons -->
                             <td class="px-6 py-4 whitespace-nowrap text-right">
                                 <div class="flex justify-end gap-2">
                                     <router-link 
-                                        :to="{ name: 'adminShowNews', params: { id: i } }"
+                                        :to="{ name: 'adminShowNews', params: { id: item.id } }"
                                         class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition"
                                         title="দেখুন">
                                         <i class="fa-solid fa-eye"></i>
                                     </router-link>
-                                    <router-link :to="{ name: 'adminEditNews', params: { id: i } }"
+                                    <router-link :to="{ name: 'adminEditNews', params: { id: item.id } }"
                                         class="p-2 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-lg transition"
                                         title="এডিট">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </router-link>
-                                    <button
+                                    <button @click="deleteNews(item.id)"
                                         class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition"
                                         title="ডিলিট">
                                         <i class="fa-solid fa-trash-can"></i>
@@ -129,18 +125,18 @@
                 </table>
             </div>
 
-            <!-- ৪. প্যাজিনেশন ডিজাইন -->
+            <!-- pagination -->
             <div
                 class="px-6 py-4 bg-gray-50/50 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
-                <span class="text-sm text-gray-500 font-medium">মোট ৫৫০টি খবরের মধ্যে ১-৫টি দেখানো হচ্ছে</span>
+                <span v-if="meta.total" class="text-sm text-gray-500 font-medium">মোট {{ meta.total }}টি খবরের মধ্যে {{ meta.from }}-{{ meta.to }}টি দেখানো হচ্ছে</span>
                 <div class="flex gap-2">
-                    <button
+                    <button @click="getNews(meta.current_page - 1)" :disabled="meta.current_page === 1" :class="meta.current_page === 1 ? 'opacity-50 cursor-not-allowed' : ''"
                         class="px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-700 hover:border-blue-500 hover:text-blue-600 font-bold transition flex items-center gap-2">
-                        <i class="fa-solid fa-chevron-left text-xs"></i> আগের
+                        <i class="fa-solid fa-chevron-left text-xs"></i> Previous
                     </button>
-                    <button
+                    <button @click="getNews(meta.current_page + 1)" :disabled="meta.current_page === meta.last_page" :class="meta.current_page === meta.last_page ? 'opacity-50 cursor-not-allowed' : ''"
                         class="px-4 py-2 bg-white border border-gray-200 rounded-xl text-gray-700 hover:border-blue-500 hover:text-blue-600 font-bold transition flex items-center gap-2">
-                        পরের <i class="fa-solid fa-chevron-right text-xs"></i>
+                        Next <i class="fa-solid fa-chevron-right text-xs"></i>
                     </button>
                 </div>
             </div>
@@ -150,7 +146,86 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            news: [],
+            categories: [],
+            meta: {},
+            search: '',
+            filterCategory: '',
+            filterStatus: ''
+        }
+    },
+    watch: {
+        search() {
+            this.getNews();
+        },
+        filterStatus() {
+            this.getNews();
+        },
+        filterCategory() {
+            this.getNews();
+        }
+    },
+    mounted() {
+        this.getNews();
+        this.getCategories();
+    },
+    methods: {
+        getNews(page = 1) {
+            axios.get('/api/news', {
+                params: {
+                    page: page,
+                    search: this.search,
+                    status: this.filterStatus,
+                    category_id: this.filterCategory
+                }
+            })
+                .then(response => {
+                    this.news = response.data.data;
+                    this.meta = response.data.meta;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        },
+        getCategories() {
+            axios.get('/api/category')
+                .then(response => {
+                    this.categories = response.data.data;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        },
+        deleteNews(id) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your news has been deleted.",
+                        icon: "success"
+                    });
+                    axios.delete('/api/news/delete/' + id)
+                        .then(() => {
+                            this.news = this.news.filter(news => {
+                                return news.id != id;
+                            });
+                        }).catch((error) => {
+                            console.log(error);
+                        });
+                }
+            });
+        }
+    }
 }
 </script>
 

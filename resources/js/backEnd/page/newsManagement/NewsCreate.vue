@@ -47,7 +47,7 @@
                         </div>
                     </div>
 
-                    <!-- main news -->
+                    <!-- main news content -->
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                         <label class="text-sm font-bold text-gray-700 mb-4 block">বিস্তারিত সংবাদ <span
                                 class="text-red-500">*</span></label>
@@ -97,6 +97,7 @@
                                         {{ category.name }}
                                     </option>
                                 </select>
+                                <small v-if="errors.category_id" class="text-red-500 text-xs">{{ errors.category_id[0] }}</small>
                             </div>
 
                             <!-- sub category -->
@@ -150,6 +151,16 @@
                                 <i class="fa-solid fa-cloud-arrow-up text-3xl text-gray-300"></i>
                                 <p class="text-sm text-gray-500 mt-2">ছবি আপলোড করতে ক্লিক করুন</p>
                             </div>
+                        </div>
+                        <small v-if="errors.image" class="text-red-500">{{ errors.image[0] }}</small>
+                        <!-- image guidelines -->
+                        <div class="mt-3 flex items-center justify-between text-[11px] text-gray-400 font-medium px-1">
+                            <span class="flex items-center gap-1">
+                                <i class="fa-solid fa-circle-info" title="সাইজ: ৪৮০ x ২৫০ পিক্সেল"></i> সাইজ: ৪৮০ x ২৫০ পিক্সেল
+                            </span>
+                            <span :class="errors.image ? 'text-red-500' : 'uppercase tracking-widest'">
+                                JPEG, PNG, JPG, GIF, SVG • ম্যাক্স ২ এমবি
+                            </span>
                         </div>
                     </div>
 
@@ -231,10 +242,20 @@ export default {
     methods: {
         handleImage(e) {
             const file = e.target.files[0];
-            if (file) {
-                this.form.image = file;
-                this.imagePreview = URL.createObjectURL(file);
+            if (file.size > 2000000) {
+                Notification.error('Image size must be less than 2MB');
+                e.target.value = '';
+                this.imagePreview = null;
+                return;
             }
+            if (file.type !== 'image/jpeg' && file.type !== 'image/jpg' && file.type !== 'image/png' && file.type !== 'image/gif' && file.type !== 'image/svg') {
+                Notification.error('Image must be jpeg, jpg, png, gif or svg');
+                e.target.value = '';
+                this.imagePreview = null;
+                return;
+            }
+            this.form.image = file;
+            this.imagePreview = URL.createObjectURL(file);
         },
         generateSlug() {
             this.form.slug = this.form.title.toLowerCase().replace(/ /g, '-');
@@ -297,7 +318,7 @@ export default {
                 });
             }
 
-            axios.post('/api/news', formData)
+            axios.post('/api/news/store', formData)
                 .then(response => {
                     Notification.success('News created successfully');
                     this.$router.push({ name: 'adminNews' });
@@ -306,7 +327,7 @@ export default {
                     if (error.response && error.response.status === 422) {
                         this.errors = error.response.data.errors;
                     }
-                    Notification.error('Somthing went wrong');
+                    Notification.error('Something went wrong');
                 });
         }
     }
