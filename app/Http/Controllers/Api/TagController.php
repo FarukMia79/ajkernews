@@ -4,17 +4,27 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTagRequest;
+use App\Http\Requests\UpdateTagRequest;
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use App\Http\Resources\TagResource;
 
 class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = Tag::withCount('news')->latest();
+
+        if ($request->search) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
+        $tags = $query->paginate(10);
+
+        return TagResource::collection($tags);
     }
 
     /**
@@ -53,9 +63,11 @@ class TagController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateTagRequest $request, string $id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+        $tag->update($request->validated());
+        return response()->json(['message' => 'Tag updated successfully', 'data' => $tag]);
     }
 
     /**
@@ -63,6 +75,8 @@ class TagController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+        $tag->delete();
+        return response()->json(['message' => 'Tag deleted successfully']);
     }
 }

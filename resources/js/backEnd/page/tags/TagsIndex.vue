@@ -34,7 +34,7 @@
                                 readonly>
                         </div>
                         <button type="submit"
-                            class="w-full bg-[#003557] hover:bg-[#004a7c] text-white py-3 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-all transform active:scale-95 flex items-center justify-center gap-2">
+                            class="w-full bg-[#003557] hover:bg-[#004a7c] cursor-pointer text-white py-3 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-all transform active:scale-95 flex items-center justify-center gap-2">
                             <i class="fa-solid fa-check-circle"></i> ট্যাগ সংরক্ষণ করুন
                         </button>
                     </form>
@@ -48,7 +48,7 @@
                         <div class="relative flex-1">
                             <i
                                 class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                            <input type="text" placeholder="ট্যাগ খুঁজুন..."
+                            <input v-model="search" type="text" placeholder="ট্যাগ খুঁজুন..."
                                 class="w-full pl-11 pr-4 py-2 bg-white border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500 transition-all">
                         </div>
                     </div>
@@ -72,27 +72,26 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-50">
-                                <tr v-for="(tag, index) in dummyTags" :key="index"
+                                <tr v-for="tag in tags" :key="tag.id"
                                     class="hover:bg-blue-50/30 transition-colors group">
                                     <td class="px-6 py-4 text-sm text-gray-500 font-medium">#{{ tag.id }}</td>
                                     <td class="px-6 py-4">
                                         <span
                                             class="px-3 py-1 bg-pink-50 text-pink-700 rounded-lg text-sm font-bold border border-pink-100 group-hover:bg-pink-100 transition-colors">{{
-                                            tag.name }}</span>
+                                                tag.name }}</span>
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-400 italic">{{ tag.slug }}</td>
                                     <td class="px-6 py-4 text-center">
                                         <span
                                             class="px-2.5 py-0.5 bg-gray-100 text-gray-600 rounded-full text-xs font-bold">{{
-                                            tag.count }}টি খবর</span>
+                                                tag.news_count }}টি খবর</span>
                                     </td>
                                     <td class="px-6 py-4 text-right">
                                         <div class="flex justify-end gap-2">
-                                            <!-- এডিট বাটন: ক্লিক করলে মোডাল খুলবে -->
                                             <button @click="openEditModal(tag)"
                                                 class="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition cursor-pointer"><i
                                                     class="fa-solid fa-pen-to-square"></i></button>
-                                            <button
+                                            <button @click="deleteTag(tag.id)"
                                                 class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition cursor-pointer"><i
                                                     class="fa-solid fa-trash-can"></i></button>
                                         </div>
@@ -105,13 +104,13 @@
             </div>
         </div>
 
-        <!-- ৪. এডিট ট্যাগ মোডাল (Popup) -->
+        <!-- edit tag modal -->
         <div v-if="isEditModalOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <!-- ওভারলে -->
+            <!-- overlay -->
             <div @click="isEditModalOpen = false"
                 class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"></div>
 
-            <!-- মোডাল কন্টেন্ট বক্স -->
+            <!-- modal content box -->
             <div class="bg-white w-full max-w-md rounded-3xl shadow-2xl z-10 overflow-hidden transform transition-all">
                 <div class="bg-[#003557] p-5 text-white flex justify-between items-center">
                     <h3 class="text-xl font-bold flex items-center gap-2">
@@ -123,15 +122,15 @@
                     </button>
                 </div>
 
-                <form @submit.prevent class="p-8 space-y-6">
+                <form @submit.prevent="updateTag" class="p-8 space-y-6">
                     <div class="flex flex-col gap-2">
                         <label class="text-sm font-bold text-gray-700 ml-1">ট্যাগের নতুন নাম</label>
-                        <input v-model="editingTag.name" type="text"
+                        <input v-model="editingTag.name" @input="updateSlug" type="text"
                             class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3 outline-none focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 transition-all">
                     </div>
                     <div class="flex flex-col gap-2">
                         <label class="text-sm font-bold text-gray-700 ml-1">স্লাগ / URL</label>
-                        <input :value="editingTag.name.toLowerCase().replace(/ /g, '-')" type="text"
+                        <input v-model="editingTag.slug" type="text"
                             class="w-full bg-gray-100 border border-gray-200 rounded-2xl px-4 py-3 text-gray-500 outline-none cursor-not-allowed"
                             readonly>
                     </div>
@@ -158,19 +157,50 @@ export default {
             form: {
                 name: '',
                 slug: ''
-            }
+            },
+            editingTag: {
+                name: '',
+                slug: ''
+            },
+            editingTag: {
+                name: '',
+                slug: ''
+            },
+            tags: [],
+            search: '',
+            errors: {}
         }
     },
     watch: {
         'form.name'(newVal) {
             this.generateSlug();
+        },
+        search() {
+            this.getTags();
         }
+    },
+    mounted() {
+        this.getTags();
     },
     methods: {
         openEditModal(tag) {
-            this.form.name = tag.name;
-            this.form.slug = tag.slug;
             this.isEditModalOpen = true;
+            this.editingTag = { ...tag };
+        },
+        updateSlug() {
+            if (!this.editingTag.name) {
+                this.editingTag.slug = '';
+                return;
+            }
+
+            let text = transliterate(this.editingTag.name);
+
+            this.editingTag.slug = text
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-+|-+$/g, '');
         },
         generateSlug() {
             if (!this.form.name) {
@@ -198,10 +228,78 @@ export default {
                     this.isEditModalOpen = false;
                     this.form.name = '';
                     this.form.slug = '';
+                    this.getTags();
+                })
+                .catch(error => {
+                    if (error.response && error.response.status === 422) {
+                        this.errors = error.response.data.errors;
+                    } else {
+                        Notification.error('Tag creation failed');
+                    }
+                });
+        },
+        updateTag() {
+            const formData = new FormData();
+            formData.append('name', this.editingTag.name);
+            formData.append('slug', this.editingTag.slug);
+            formData.append('_method', 'PUT');
+
+            axios.post(`/api/tags/update/${this.editingTag.id}`, formData)
+                .then(response => {
+                    Notification.success('Tag updated successfully');
+                    this.isEditModalOpen = false;
+                    this.editingTag.name = '';
+                    this.editingTag.slug = '';
+
+                    this.getTags();
+                })
+                .catch(error => {
+                    if (error.response && error.response.status === 422) {
+                        this.errors = error.response.data.errors;
+                    } else {
+                        Notification.error('Tag update failed');
+                    }
+                });
+        },
+        getTags() {
+            axios.get('/api/tags', {
+                params: {
+                    search: this.search
+                }
+            })
+                .then(response => {
+                    this.tags = response.data.data;
                 })
                 .catch(error => {
                     console.log(error);
                 });
+        },
+        deleteTag(id) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your tag has been deleted.",
+                        icon: "success"
+                    });
+                    axios.delete(`/api/tags/delete/${id}`)
+                        .then(response => {
+                            Notification.success('Tag deleted successfully');
+                            this.tags = this.tags.filter(tag => tag.id !== id);
+                        })
+                        .catch(error => {
+                            Notification.error('Tag deletion failed');
+                        });
+                }
+            });
         }
     }
 }

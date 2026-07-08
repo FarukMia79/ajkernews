@@ -47,6 +47,8 @@ Route::middleware(['auth:sanctum', 'role:admin,editor'])->group(function () {
     Route::put('news/update/{news}', [NewsController::class,'update']);
 
     Route::post('tags/store', [TagController::class, 'store']);
+    Route::put('tags/update/{tag}', [TagController::class,'update']);
+    Route::delete('tags/delete/{tag}', [TagController::class,'destroy']);
     
 });
 
@@ -69,6 +71,8 @@ Route::middleware(['auth:sanctum', 'role:admin,editor,reporter'])->group(functio
     Route::get('news', [NewsController::class, 'index']);
     Route::post('news/store', [NewsController::class, 'store']);
     Route::get('sub-categories/by-category/{categoryId}', [SubCategoryController::class, 'getByCategory']);
+
+    Route::get('tags', [TagController::class, 'index']);
     
 
     Route::post('/admin/logout', [AuthController::class, 'logout']);
