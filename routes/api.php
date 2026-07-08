@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\SubCategoryController;
 use App\Http\Controllers\Api\DivisionController;
 use App\Http\Controllers\Api\NewsController;
+use App\Http\Controllers\Api\TagController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -42,6 +43,10 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
 // 2. For admin and editor
 Route::middleware(['auth:sanctum', 'role:admin,editor'])->group(function () {
     Route::delete('news/delete/{news}', [NewsController::class, 'destroy']);
+    Route::get('news/{news}', [NewsController::class, 'show']);
+    Route::put('news/update/{news}', [NewsController::class,'update']);
+
+    Route::post('tags/store', [TagController::class, 'store']);
     
 });
 

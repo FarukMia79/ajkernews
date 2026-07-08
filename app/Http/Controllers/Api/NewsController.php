@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateNewsRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreNewsRequest;
 use App\Http\Resources\NewsResource;
@@ -94,7 +95,8 @@ class NewsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $news = News::findOrFail($id);
+        return new NewsResource($news);
     }
 
     /**
@@ -108,9 +110,52 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateNewsRequest $request, string $id)
     {
-        //
+        $news = News::findOrFail($id);
+        $data = $request->validated();
+
+        if ($request->hasFile('image')) {
+            if ($news->image) {
+                $oldImagePath = public_path($news->image);
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+            }
+
+            $file = $request->file('image');
+            $imageName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+            $imagePath = public_path('uploads/news/');
+
+            if (!file_exists($imagePath)) {
+                mkdir($imagePath, 0777, true);
+            }
+
+            $manager = new ImageManager(new Driver());
+            $image = $manager->read($file);
+            $image->cover(480, 250);
+            $image->save($imagePath . $imageName);
+
+            $data['image'] = 'uploads/news/' . $imageName;
+        }
+
+        $news->update($data);
+
+        if ($request->has('tags')) {
+            $tagIds = [];
+            $tagsArray = is_array($request->tags) ? $request->tags : explode(',', $request->tags);
+            
+            foreach ($tagsArray as $tagName) {
+                $tag = Tag::firstOrCreate(
+                    ['name' => trim($tagName)],
+                    ['slug' => str()->slug(trim($tagName))]
+                );
+                $tagIds[] = $tag->id;
+            }
+            $news->tags()->sync($tagIds);
+        }
+
+        return new NewsResource($news);
     }
 
     /**

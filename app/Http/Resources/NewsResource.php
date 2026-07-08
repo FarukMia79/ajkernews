@@ -33,7 +33,8 @@ class NewsResource extends JsonResource
             'is_slider' => $this->is_slider,
             'allow_comment' => $this->allow_comment,
             'created_at' => $this->created_at->format('d M Y'),
-            'updated_at' => $this->updated_at->format('d M Y')
+            'updated_at' => $this->updated_at->format('d M Y'),
+            'tags' => $this->tags,
         ];
     }
 }

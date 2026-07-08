@@ -4,6 +4,9 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 
+import * as transliteration from 'transliteration';
+window.transliterate = transliteration.transliterate;
+
 // --- axios & App Storage ---
 import axios from 'axios';
 window.axios = axios;

@@ -97,7 +97,8 @@
                                         {{ category.name }}
                                     </option>
                                 </select>
-                                <small v-if="errors.category_id" class="text-red-500 text-xs">{{ errors.category_id[0] }}</small>
+                                <small v-if="errors.category_id" class="text-red-500 text-xs">{{ errors.category_id[0]
+                                    }}</small>
                             </div>
 
                             <!-- sub category -->
@@ -156,7 +157,8 @@
                         <!-- image guidelines -->
                         <div class="mt-3 flex items-center justify-between text-[11px] text-gray-400 font-medium px-1">
                             <span class="flex items-center gap-1">
-                                <i class="fa-solid fa-circle-info" title="সাইজ: ৪৮০ x ২৫০ পিক্সেল"></i> সাইজ: ৪৮০ x ২৫০ পিক্সেল
+                                <i class="fa-solid fa-circle-info" title="সাইজ: ৪৮০ x ২৫০ পিক্সেল"></i> সাইজ: ৪৮০ x ২৫০
+                                পিক্সেল
                             </span>
                             <span :class="errors.image ? 'text-red-500' : 'uppercase tracking-widest'">
                                 JPEG, PNG, JPG, GIF, SVG • ম্যাক্স ২ এমবি
@@ -258,7 +260,17 @@ export default {
             this.imagePreview = URL.createObjectURL(file);
         },
         generateSlug() {
-            this.form.slug = this.form.title.toLowerCase().replace(/ /g, '-');
+            if (!this.form.title) {
+                this.form.slug = '';
+                return;
+            }
+
+            this.form.slug = this.form.title
+                .toString()
+                .toLowerCase()
+                .replace(/[^a-z0-9\u0980-\u09FF]+/g, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-+|-+$/g, '');
         },
         fetchCategories() {
             axios.get('/api/category')
