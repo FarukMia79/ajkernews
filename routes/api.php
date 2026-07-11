@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\SubCategoryController;
 use App\Http\Controllers\Api\DivisionController;
 use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\TagController;
+use App\Http\Controllers\Api\PhotoController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -49,6 +50,8 @@ Route::middleware(['auth:sanctum', 'role:admin,editor'])->group(function () {
     Route::post('tags/store', [TagController::class, 'store']);
     Route::put('tags/update/{tag}', [TagController::class,'update']);
     Route::delete('tags/delete/{tag}', [TagController::class,'destroy']);
+
+    Route::delete('gallery/photo/{photo}', [PhotoController::class,'destroy']);
     
 });
 
@@ -73,6 +76,9 @@ Route::middleware(['auth:sanctum', 'role:admin,editor,reporter'])->group(functio
     Route::get('sub-categories/by-category/{categoryId}', [SubCategoryController::class, 'getByCategory']);
 
     Route::get('tags', [TagController::class, 'index']);
+
+    Route::post('gallery/photo', [PhotoController::class, 'store']);
+    Route::get('gallery/photo', [PhotoController::class,'index']);
     
 
     Route::post('/admin/logout', [AuthController::class, 'logout']);
