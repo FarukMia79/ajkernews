@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\DivisionController;
 use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\PhotoController;
+use App\Http\Controllers\Api\VideoController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -79,6 +80,8 @@ Route::middleware(['auth:sanctum', 'role:admin,editor,reporter'])->group(functio
 
     Route::post('gallery/photo', [PhotoController::class, 'store']);
     Route::get('gallery/photo', [PhotoController::class,'index']);
+
+    Route::post('video/store', [VideoController::class, 'store']);
     
 
     Route::post('/admin/logout', [AuthController::class, 'logout']);
