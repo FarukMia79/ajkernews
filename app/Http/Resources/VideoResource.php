@@ -17,11 +17,12 @@ class VideoResource extends JsonResource
         return [
             'id' => $this->id,
             'category_id' => $this->category_id,
-            'category_name' => $this->category->name,
+            'category' => $this->category->name ?? 'N/A',
             'title' => $this->title,
             'video_url' => $this->video_url,
             'video_id' => $this->video_id,
             'status' => $this->status,
+            'tags' => $this->tags,
             'created_at' => $this->created_at->format('d M Y'),
             'updated_at' => $this->updated_at->format('d M Y'),
         ];

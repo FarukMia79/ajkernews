@@ -3,14 +3,14 @@
         <!-- page header and breadcrumb -->
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div>
-                <h1 class="text-2xl font-black text-gray-800 tracking-tight">নতুন ভিডিও যোগ করুন</h1>
+                <h1 class="text-2xl font-black text-gray-800 tracking-tight">ভিডিও সংশোধন করুন</h1>
                 <nav class="flex items-center gap-2 text-sm text-gray-500 mt-1">
                     <span>অ্যাডমিন</span>
                     <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                    <router-link to="/admin/video-gallery/index" class="hover:text-blue-600 font-medium">ভিডিও
+                    <router-link to="/admin/video-gallery" class="hover:text-blue-600 font-medium">ভিডিও
                         গ্যালারি</router-link>
                     <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                    <span class="text-blue-600 font-bold">ভিডিও আপলোড</span>
+                    <span class="text-blue-600 font-bold">ভিডিও সংশোধন</span>
                 </nav>
             </div>
             <router-link to="/admin/video-gallery/index"
@@ -19,7 +19,7 @@
             </router-link>
         </div>
 
-        <form @submit.prevent="submitForm" enctype="multipart/form-data">
+        <form @submit.prevent="updateVideo" enctype="multipart/form-data">
             <div class="flex flex-col lg:flex-row gap-8">
                 <div class="w-full lg:w-2/3 space-y-6">
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
@@ -116,8 +116,8 @@
                     <!-- action buttons section -->
                     <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col gap-3">
                         <button type="submit"
-                            class="w-full bg-[#003557] hover:bg-[#004a7c] text-white py-3.5 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition transform active:scale-95 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-square-plus"></i> ভিডিও প্রকাশ করুন
+                            class="w-full bg-[#003557] hover:bg-[#004a7c] text-white cursor-pointer py-3.5 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition transform active:scale-95 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-square-plus"></i> ভিডিও আপডেট করুন
                         </button>
                         <router-link to="/admin/video-gallery/index"
                             class="w-full text-center py-2 text-gray-500 hover:text-gray-800 font-medium transition">বাতিল</router-link>
@@ -143,6 +143,7 @@ export default {
             },
             categories: [],
             youtubeId: null,
+            id: this.$route.params.id,
             errors: {}
         }
     },
@@ -151,7 +152,22 @@ export default {
             this.youtubeId = this.extractYouTubeId(newVal);
         }
     },
+    mounted() {
+        this.fetchVideo();
+        this.fetchCategories();
+    },
     methods: {
+        fetchVideo() {
+            axios.get(`/api/gallery/video/${this.id}`)
+                .then(response => {
+                    this.form = response.data.data;
+                    this.youtubeId = this.extractYouTubeId(this.form.video_url);
+                    this.form.tags = Array.isArray(response.data.data.tags) ? response.data.data.tags.map(t => t.name).join(', ') : response.data.data.tags;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        },
         extractYouTubeId(url) {
             if (!url) return null;
 
@@ -170,13 +186,15 @@ export default {
                     console.log(error);
                 });
         },
-        submitForm() {
+        updateVideo() {
             let formData = new FormData()
             formData.append('title', this.form.title)
             formData.append('video_url', this.form.video_url)
             formData.append('video_id', this.form.video_id)
             formData.append('category_id', this.form.category_id)
             formData.append('status', this.form.status)
+
+            formData.append('_method', 'PUT')
             
             if (this.form.tags) {
                 let tagsArray = typeof this.form.tags === 'string'
@@ -191,9 +209,9 @@ export default {
                 });
             }
 
-            axios.post('/api/video/store', formData)
+            axios.post(`/api/gallery/video/update/${this.id}`, formData)
                 .then(response => {
-                    Notification.success('Video created successfully');
+                    Notification.success('Video updated successfully');
                     this.$router.push({ name: 'adminVideoGalleryIndex' });
                 })
                 .catch(error => {
@@ -205,9 +223,6 @@ export default {
                 });
         }
     },
-    mounted() {
-        this.fetchCategories();
-    }
 }
 </script>
 

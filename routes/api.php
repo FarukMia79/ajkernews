@@ -82,6 +82,10 @@ Route::middleware(['auth:sanctum', 'role:admin,editor,reporter'])->group(functio
     Route::get('gallery/photo', [PhotoController::class,'index']);
 
     Route::post('video/store', [VideoController::class, 'store']);
+    Route::get('gallery/video', [VideoController::class,'index']);
+    Route::get('gallery/video/{video}', [VideoController::class,'show']);
+    Route::put('gallery/video/update/{video}', [VideoController::class,'update']);
+    Route::delete('gallery/video/delete/{video}', [VideoController::class,'destroy']);
     
 
     Route::post('/admin/logout', [AuthController::class, 'logout']);

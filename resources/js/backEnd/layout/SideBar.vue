@@ -65,7 +65,7 @@
                 <i class="fa-solid fa-images w-5 text-cyan-400"></i> ফটো গ্যালারি
             </router-link>
 
-            <router-link to="/admin/video-gallery" 
+            <router-link to="/admin/video-gallery/index" 
                 class="flex items-center gap-3 p-3 rounded-xl transition-all duration-200 text-[14px] font-medium text-gray-300 hover:text-white hover:bg-white/10"
                 active-class="bg-blue-600/20 !text-white border-l-4 border-blue-500 !rounded-none !rounded-r-xl">
                 <i class="fa-solid fa-circle-play w-5 text-red-500"></i> ভিডিও গ্যালারি
