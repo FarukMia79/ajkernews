@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\PhotoController;
 use App\Http\Controllers\Api\VideoController;
 use App\Http\Controllers\Api\AdvertisementController;
+use App\Http\Controllers\Api\PollController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -89,4 +90,9 @@ Route::middleware(['auth:sanctum', 'role:admin,editor,reporter'])->group(functio
     Route::post('/admin/logout', [AuthController::class, 'logout']);
 
     Route::apiResource('advertisements', AdvertisementController::class)->except(['create', 'edit']);
+    Route::get('polls', [PollController::class, 'index']);
+    Route::get('polls/{poll}', [PollController::class, 'show']);
+    Route::post('polls/store', [PollController::class, 'store']);
+    Route::post('polls/update/{poll}', [PollController::class, 'update']);
+    Route::delete('polls/{poll}', [PollController::class, 'destroy']);
 });
