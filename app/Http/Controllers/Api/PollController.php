@@ -23,7 +23,7 @@ class PollController extends Controller
             $query->where('status', $request->status);
         }
 
-        $polls = $query->paginate(1);
+        $polls = $query->paginate(10);
         return PollResource::collection($polls);
     }
 
